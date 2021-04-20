@@ -15,7 +15,7 @@ const IndexPage = ({ photoList }: Props) => (
   </Layout>
 );
 
-export const getServerSideProps: GetServerSideProps = async ({params}) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   return {
     props: {
       photoList: await getPhotoList(params!.folder.toString()),
