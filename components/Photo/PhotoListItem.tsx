@@ -7,7 +7,7 @@ type Props = {
 };
 
 const PhotoListItem = ({ data }: Props) => (
-  <Image cloudName={process.env.CLOUDINARY_CLOUD_NAME} alt={data.name} publicId={data.publicId} width="500" crop="scale" />
+  <Image cloudName="dszun6oiu" alt={data.name} publicId={data.publicId} width="500" crop="scale" />
 );
 
 export default PhotoListItem;
