@@ -6,21 +6,27 @@ import Photo from "../../interfaces/Photo";
 
 type Props = {
   photoList: Photo[];
+  folderName: string;
 };
 
-const IndexPage = ({ photoList }: Props) => (
-  <Layout title="Home | Image Gallery">
-    <h1>Galleria</h1>
+const GalleryPage = ({ photoList, folderName }: Props) => (
+  <Layout title={`Home | ${folderName} Gallery`}>
+    <h1>
+      Galleria di
+      {folderName}
+    </h1>
     <PhotoList items={photoList} />
   </Layout>
 );
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const folder: string = params!.folder.toString();
   return {
     props: {
-      photoList: await getPhotoList(params!.folder.toString()),
+      photoList: await getPhotoList(folder),
+      folderName: folder,
     },
   };
 };
 
-export default IndexPage;
+export default GalleryPage;
