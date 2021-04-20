@@ -13,7 +13,7 @@ const GalleryPage = ({ photoList, folderName }: Props) => (
   <Layout title={`Home | ${folderName} Gallery`}>
     <h1>
       Galleria di
-      {folderName}
+      {` ${folderName}`}
     </h1>
     <PhotoList items={photoList} />
   </Layout>
