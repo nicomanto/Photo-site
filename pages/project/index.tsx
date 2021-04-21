@@ -1,17 +1,38 @@
-import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { GetStaticProps } from "next";
+import ProjectCard from "../../components/Project/ProjectCard";
+import Project from "../../interfaces/Project";
+import { getPrimaryPhoto } from "../../server/Cloudinary/managePhoto";
 
-const projectPage = () => (
-  <Card style={{ width: "18rem" }}>
-    <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk of the card's
-        content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
-    </Card.Body>
-  </Card>
+type Props = {
+  dataProject: Project[];
+};
+
+const projectPage = ({ dataProject }: Props) => (
+  <>
+    {dataProject.map((item) => (
+      <ProjectCard folder={item.folder} description={item.description} image={item.primaryImage} />
+    ))}
+  </>
 );
 
+export const getStaticProps: GetStaticProps = async () => {
+  const dataProject: Project[] = [
+    {
+      folder: "photo",
+      description: "descrizione photo",
+      primaryImage: await getPrimaryPhoto("photo"),
+    },
+    {
+      folder: "place",
+      description: "descrizione place",
+      primaryImage: await getPrimaryPhoto("place"),
+    },
+  ];
+
+  return {
+    props: {
+      dataProject,
+    },
+  };
+};
 export default projectPage;

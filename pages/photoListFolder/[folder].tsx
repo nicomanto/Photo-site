@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
-import getPhotoList from "../api/Cloudinary";
+import { getPhotoList } from "../../server/Cloudinary/managePhoto";
 import Photo from "../../interfaces/Photo";
 
 type Props = {
