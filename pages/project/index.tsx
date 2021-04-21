@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import ProjectCard from "../../components/Project/ProjectCard";
 import Project from "../../interfaces/Project";
 import { getPrimaryPhoto } from "../../server/Cloudinary/managePhoto";
@@ -15,7 +15,7 @@ const projectPage = ({ dataProject }: Props) => (
   </>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const dataProject: Project[] = [
     {
       folder: "photo",
