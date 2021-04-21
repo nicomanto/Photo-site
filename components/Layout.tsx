@@ -19,9 +19,9 @@ const Layout = ({ children, title = "This is the default title", navbar=[{title:
     </Head>
     <header>
 
-    <nav className="navbar py-5 container">
+    <nav className="navbar-dark navbar py-5 container">
       <Navbar.Brand className="navLink display-4" href="/">Aurora Leso</Navbar.Brand>
-      
+      <Navbar.Toggle />
         {navbar.map((item) => (
           <Nav className="justify-content-end">
             <a className="navLink" href={item.URL}>{item.title}</a>
