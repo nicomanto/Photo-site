@@ -8,6 +8,7 @@ import "../styles/globals.css";
 
 if (typeof window !== "undefined") {
   require("jquery");
+  require("popper.js");
   require("bootstrap/dist/js/bootstrap");
 }
 
