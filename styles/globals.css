@@ -19,12 +19,17 @@
   opacity:50%;
 }
 
-.navLink:hover{
+.card-img-top{
+  height:350px;
+  object-fit: cover;
+}
+
+.navLink:hover, .navLinkBrand:hover{
   color:white;
   text-decoration: none;
 }
 
-.navLink {
+.navLink, .navLinkBrand{
   color: white;
   font-size:1.2rem;
   text-transform: uppercase;
@@ -35,7 +40,7 @@
   padding: 15px 20px;
   position: relative;
 }
-.navLink:after {    
+.navLink:after, .navLinkBrand:after{    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -47,10 +52,30 @@
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.navLink:hover:after { 
+.navLinkBrand:hover:after, .navLink:hover:after { 
   width: 100%; 
   left: 0; 
 }
+
+.navLinkCollapse{
+  color: white;
+  font-size:1.2rem;
+  margin-top:1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15rem;
+}
+.navLinkCollapse:hover{
+  text-decoration: none;
+  opacity: 50%;
+  color: white;
+}
+
+.navbar-collapse{
+  margin-top:2rem;
+}
+
+
 
 @media (min-width: 768px)
 {
@@ -61,7 +86,7 @@
 
 @media (max-width: 768px)
 {
-    .nav{
+    .navLink{
         display: none;
     }
 }
