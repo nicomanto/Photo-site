@@ -3,7 +3,7 @@ import EmailInfo from "../../../interfaces/EmailInfo";
 import { TXTTemplate, HMTLTemplate } from "../templateEmail/infoTemplate";
 
 const Nodemailer = {
-  sendEmail: (emailInfo: EmailInfo): void => {
+  sendEmail: (emailInfo: EmailInfo) => {
     // setup e-mail data with unicode symbols
 
     const mailOptions = {

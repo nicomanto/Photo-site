@@ -1,9 +1,11 @@
 import * as React from "react";
-import { FormGroup, FormLabel, Form, FormControl } from "react-bootstrap";
+
+import { FormGroup, FormLabel, Form, FormControl, Button } from "react-bootstrap";
+import sendInformation from "./manageInfoEmail";
 
 const FormEmail = () => (
   <div className="container">
-    <Form>
+    <Form onSubmit={sendInformation}>
       <FormGroup>
         <div className="form-row">
           <div className="col">
@@ -23,8 +25,8 @@ const FormEmail = () => (
               type="text"
               required
               placeholder="Il tuo cognome"
-              id="nameValue"
-              name="nameValue"
+              id="surnameValue"
+              name="surnameValue"
             />
           </div>
         </div>
@@ -35,14 +37,14 @@ const FormEmail = () => (
               type="email"
               required
               placeholder="la tua email"
-              id="nameValue"
-              name="nameValue"
+              id="emailValue"
+              name="emailValue"
             />
           </div>
 
           <div className="col">
             <FormLabel className="py-2">Numero di telefono</FormLabel>
-            <FormControl type="tel" placeholder="la tua email" id="nameValue" name="nameValue" />
+            <FormControl type="tel" placeholder="la tua email" id="phoneValue" name="phoneValue" />
           </div>
         </div>
 
@@ -50,11 +52,15 @@ const FormEmail = () => (
         <textarea
           required
           placeholder="la tua email"
-          id="nameValue"
-          name="nameValue"
+          id="messageValue"
+          name="messageValue"
           className="form-control"
           rows={3}
         />
+
+        <Button type="submit" variant="primary">
+          Invio
+        </Button>
       </FormGroup>
     </Form>
   </div>
