@@ -97,7 +97,7 @@ const FormEmail = () => {
   }
 
   return (
-    <div className="emailSend">
+    <div className="emailSend my-5">
       <p>Email successfully sent, wait for a response.</p>
 
       <a href="/" className="btn btn-info" role="button">
