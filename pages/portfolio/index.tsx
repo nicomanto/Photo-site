@@ -39,7 +39,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
     if (data.status === 200) {
       return (await data.json()).photo;
     }
-    throw Error("Primary Image not found");
+    else{
+      throw Error("Primary Image not found");
+    }
+    
   };
 
   const dataProject: Project[] = [
