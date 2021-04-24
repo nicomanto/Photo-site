@@ -14,6 +14,8 @@ if (typeof window !== "undefined") {
 
 /* eslint-enable global-require */
 
-const PhotoSite = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />;
+const PhotoSite = ({ Component, pageProps }: AppProps) => {
+  return <Component {...pageProps} />;
+};
 
 export default PhotoSite;
