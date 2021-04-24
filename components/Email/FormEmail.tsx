@@ -1,69 +1,110 @@
-import * as React from "react";
+import React, { useState } from "react";
+import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
+import EmailInfo from "../../interfaces/EmailInfo";
 
-import { FormGroup, FormLabel, Form, FormControl, Button } from "react-bootstrap";
-import sendInformation from "./manageInfoEmail";
+const FormEmail = () => {
+  const [submitted, setSubmitted] = useState(false);
 
-const FormEmail = () => (
-  <div className="container">
-    <Form onSubmit={sendInformation}>
-      <FormGroup>
-        <div className="form-row">
-          <div className="col">
-            <FormLabel className="py-2">Nome</FormLabel>
-            <FormControl
-              type="text"
-              required
-              placeholder="Il tuo nome"
-              id="nameValue"
-              name="nameValue"
-            />
+  const sendInformation = async (event: any) => {
+    event.preventDefault();
+
+    const infoEmail: EmailInfo = {
+      name: event.target.nameValue.value,
+      surname: event.target.surnameValue.value,
+      email: event.target.emailValue.value,
+      number: event.target.phoneValue.value ? event.target.phoneValue.value : null,
+      message: event.target.messageValue.value,
+    };
+
+    const data = await fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(infoEmail),
+    });
+
+    if (data.status === 200) {
+      setSubmitted(true);
+    }
+  };
+
+  if (!submitted) {
+    return (
+      <Form onSubmit={sendInformation}>
+        <p className="my-5">Fill the form to contact me.</p>
+        <FormGroup>
+          <div className="form-row">
+            <div className="col">
+              <FormLabel>Name*</FormLabel>
+              <FormControl
+                type="text"
+                required
+                placeholder="Your name"
+                id="nameValue"
+                name="nameValue"
+              />
+            </div>
+
+            <div className="col">
+              <FormLabel>Surname*</FormLabel>
+              <FormControl
+                type="text"
+                required
+                placeholder="Your surname"
+                id="surnameValue"
+                name="surnameValue"
+              />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="col">
+              <FormLabel>Email*</FormLabel>
+              <FormControl
+                type="email"
+                required
+                placeholder="Your email"
+                id="emailValue"
+                name="emailValue"
+              />
+            </div>
+
+            <div className="col">
+              <FormLabel>Phone</FormLabel>
+              <FormControl type="tel" placeholder="Your phone" id="phoneValue" name="phoneValue" />
+            </div>
           </div>
 
-          <div className="col">
-            <FormLabel className="py-2">Cognome</FormLabel>
-            <FormControl
-              type="text"
-              required
-              placeholder="Il tuo cognome"
-              id="surnameValue"
-              name="surnameValue"
-            />
-          </div>
-        </div>
-        <div className="form-row">
-          <div className="col">
-            <FormLabel className="py-2">Email</FormLabel>
-            <FormControl
-              type="email"
-              required
-              placeholder="la tua email"
-              id="emailValue"
-              name="emailValue"
-            />
-          </div>
+          <FormLabel>Message*</FormLabel>
+          <textarea
+            required
+            placeholder="Your message"
+            id="messageValue"
+            name="messageValue"
+            className="form-control"
+            rows={3}
+          />
 
-          <div className="col">
-            <FormLabel className="py-2">Numero di telefono</FormLabel>
-            <FormControl type="tel" placeholder="la tua email" id="phoneValue" name="phoneValue" />
-          </div>
-        </div>
+          <Button type="submit" className="my-5 px-5" variant="info">
+            Send
+          </Button>
 
-        <FormLabel className="py-2">Messaggio</FormLabel>
-        <textarea
-          required
-          placeholder="la tua email"
-          id="messageValue"
-          name="messageValue"
-          className="form-control"
-          rows={3}
-        />
+          <FormText>Fills with * are necessary.</FormText>
+        </FormGroup>
+      </Form>
+    );
+  }
 
-        <Button type="submit" variant="primary">
-          Invio
-        </Button>
-      </FormGroup>
-    </Form>
-  </div>
-);
+  return (
+    <div className="emailSend">
+      <p>Email successfully sent, wait for a response.</p>
+
+      <a href="/" className="btn btn-info" role="button">
+        Back to the home page
+      </a>
+    </div>
+  );
+};
 
 export default FormEmail;

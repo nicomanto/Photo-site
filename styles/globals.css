@@ -7,9 +7,9 @@
   color:white;
 }
 
-.display-3{
+/*.display-3{
   padding-left:5%;
-}
+}*/
 
 .navbar-brand{
   font-size:1.9rem;
@@ -78,6 +78,24 @@
 .form-control:focus {
   border-color: rgba(0, 255, 255, 0.993);
   box-shadow: inset 0 1px 1px rgba(0, 255, 255, 0.993), 0 0 12px rgba(0, 255, 255, 0.993);
+}
+
+.emailSend{
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.form-label{
+  margin-top:1rem
+}
+
+.linkFooter{
+  color:white;
+  text-decoration: none;
+}
+
+.linkFooter:hover{
+  color:white;
 }
 
 
