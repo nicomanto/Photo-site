@@ -4,8 +4,10 @@ import EmailInfo from "../../interfaces/EmailInfo";
 
 const FormEmail = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendInformation = async (event: any) => {
+    setLoading(true);
     event.preventDefault();
 
     const infoEmail: EmailInfo = {
@@ -27,13 +29,15 @@ const FormEmail = () => {
 
     if (data.status === 200) {
       setSubmitted(true);
+      setLoading(false);
     }
   };
 
-  if (!submitted) {
+  if (!submitted && !loading) {
     return (
       <Form onSubmit={sendInformation}>
         <p className="my-5">Fill the form to contact me.</p>
+        <FormText>Fills with * are necessary.</FormText>
         <FormGroup>
           <div className="form-row">
             <div className="col">
@@ -89,15 +93,20 @@ const FormEmail = () => {
           <Button type="submit" className="my-5 px-5" variant="info">
             Send
           </Button>
-
-          <FormText>Fills with * are necessary.</FormText>
         </FormGroup>
       </Form>
     );
   }
+  if (!submitted && loading) {
+    return (
+      <div className="spinner-border text-light my-5" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    );
+  }
 
   return (
-    <div className="emailSend">
+    <div className="my-5">
       <p>Email successfully sent, wait for a response.</p>
 
       <a href="/" className="btn btn-info" role="button">
