@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import React from "react";
 import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
@@ -26,7 +26,7 @@ const portfolioPage = ({ dataProject }: Props) => (
   </Layout>
 );
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const getPrimaryImage = async (folder: string): Promise<Photo> => {
     const data = await fetch(`${process.env.URL_SITE}/api/getPrimaryPhoto/${folder}`, {
       method: "GET",

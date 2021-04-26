@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = "This is the default title", navbar=[{title: "Portfolio", URL: "/portfolio"},{title: "About me", URL: "/aboutMe"},{title: "Contact", URL: "/contact"}] }: Props) => (
-  <html lang="en">
+    <>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -48,7 +48,7 @@ const Layout = ({ children, title = "This is the default title", navbar=[{title:
       <hr />
       <p> &copy; 2021 <a lang="it" className="linkFooter" href="https://nicomanto.github.io/About-me">Niccolò Mantovani</a></p>
     </footer>
-  </html>
+    </>
 );
 
 export default Layout;
