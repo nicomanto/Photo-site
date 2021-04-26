@@ -19,7 +19,7 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
   return (
     <Layout title={`${folderName} Gallery`}>
       <h1>
-        Galleria di
+        Gallery of
         {` ${folderName}`}
       </h1>
       <PhotoList items={photoList!} />
