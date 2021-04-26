@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import Cloudinary from "../service/Cloudinary/Cloudinary";
 
-const getFolderPhoto = async (req: NextApiRequest, res: NextApiResponse) => {
+const getFolderPhoto = async (_req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { folders } = await Cloudinary.getFolderList();
 
