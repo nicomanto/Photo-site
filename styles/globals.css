@@ -100,8 +100,9 @@
 
 /*Photo list*/
 .photoModalView{
-  width:100%;
-  height: 100%;
+  width: 100%;
+  height: 80vh;
+  object-fit: contain;
 }
 
 .modal-content{
