@@ -75,7 +75,7 @@ const Layout = ({
           title="Niccolò Mantovani site"
           href="https://nicomanto.github.io/About-me"
         >
-          Niccolò Mantovani
+          {" Niccolò Mantovani"}
         </a>
       </p>
     </footer>
