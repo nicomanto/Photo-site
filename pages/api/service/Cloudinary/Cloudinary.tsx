@@ -19,6 +19,17 @@ const Cloudinary = {
         throw Error("Failed to get image from cloudinary");
       });
   },
+
+  getFolderList: (): Promise<any> => {
+    return cloudinary.api
+      .root_folders()
+      .then((result: any) => {
+        return result;
+      })
+      .catch(() => {
+        throw Error("Failed to get list of folder from cloudinary");
+      });
+  },
 };
 
 export default Cloudinary;

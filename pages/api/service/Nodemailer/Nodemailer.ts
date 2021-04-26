@@ -11,7 +11,7 @@ const Nodemailer = {
 
     const mailOptions = {
       from: `"Aurora Leso Site" <${process.env.EMAIL}>`, // sender address
-      to: "lesoaurora@gmail.com", // list of receivers
+      to: process.env.EMAIL_TO_SEND, // list of receivers
       subject: "Offerta di collaborazione", // Subject line
       text: collaborationTXTTemplate(emailInfo), // plaintext body
       html: collaborationHMTLTemplate(emailInfo), // html body

@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import React from "react";
 import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
@@ -31,40 +31,34 @@ const portfolioPage = ({ dataProject }: Props) => (
     <div className="py-5 px-5">
       <div className="row hiddem-md-up">
         {dataProject.map((item) => (
-          <ProjectCard
-            folder={item.folder}
-            description={item.description}
-            image={item.primaryImage}
-          />
+          <ProjectCard folder={item.folder} image={item.primaryImage} />
         ))}
       </div>
     </div>
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const dataProject: Project[] = [
-    {
-      folder: "photo",
-      description: "descrizione photo",
-      primaryImage: await getPrimaryImage("photo"),
+export const getServerSideProps: GetServerSideProps = async () => {
+  const data = await fetch(`${process.env.URL_SITE}/api/getListFolder/`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
     },
-    {
-      folder: "place",
-      description: "descrizione place",
-      primaryImage: await getPrimaryImage("place"),
-    },
-    {
-      folder: "gino",
-      description: "descrizione place",
-      primaryImage: await getPrimaryImage("place"),
-    },
-    {
-      folder: "gino2",
-      description: "descrizione place",
-      primaryImage: await getPrimaryImage("place"),
-    },
-  ];
+  });
+
+  const { folders } = await data.json();
+
+  const dataProject = Array<Project>();
+
+  for await (const element of folders) {
+    const proj: Project = {
+      folder: element.path,
+      primaryImage: await getPrimaryImage(element.path),
+    };
+
+    dataProject.push(proj);
+  }
 
   return {
     props: {

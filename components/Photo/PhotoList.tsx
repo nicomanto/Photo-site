@@ -33,6 +33,7 @@ const PhotoList = ({ items }: Props) => {
               publicId={item.publicId}
               width="500"
               crop="scale"
+              loading="lazy"
             />
           </div>
         ))}

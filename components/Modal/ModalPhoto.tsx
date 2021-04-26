@@ -18,9 +18,7 @@ const ModalPhoto = ({ show, onHide, imageContent }: Props) => (
     aria-labelledby="contained-modal-title-vcenter"
     centered
   >
-    <Modal.Header closeButton>
-      <Modal.Title>{imageContent.name}</Modal.Title>
-    </Modal.Header>
+    <Modal.Header closeButton />
     <Modal.Body className="text-center">
       <Image
         cloudName="dszun6oiu"
@@ -28,6 +26,7 @@ const ModalPhoto = ({ show, onHide, imageContent }: Props) => (
         alt={imageContent.name}
         publicId={imageContent.publicId}
         crop="scale"
+        loading="lazy"
       />
     </Modal.Body>
   </Modal>

@@ -22,7 +22,9 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
         Gallery of
         {` ${folderName}`}
       </h1>
-      <PhotoList items={photoList!} />
+      <div className="py-5 px-5">
+        <PhotoList items={photoList!} />
+      </div>
     </Layout>
   );
 };
