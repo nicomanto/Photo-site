@@ -1,27 +1,21 @@
-.col-md-4{
-  padding-bottom: 20px;
-}
-
 *{
   background-color: black;
   color:white;
 }
 
-/*.display-3{
-  padding-left:5%;
-}*/
+.col-md-4{
+  padding-bottom: 20px;
+}
 
+
+
+/*Navbar*/
 .navbar-brand{
   font-size:1.9rem;
 }
 
 .navbar-brand:hover{
   opacity:50%;
-}
-
-.card-img-top{
-  height:350px;
-  object-fit: cover;
 }
 
 .navLink:hover, .navLinkBrand:hover{
@@ -75,6 +69,7 @@
   margin-top:2rem;
 }
 
+/*Form email*/
 .form-control:focus {
   border-color: rgba(0, 255, 255, 0.993);
   box-shadow: inset 0 1px 1px rgba(0, 255, 255, 0.993), 0 0 12px rgba(0, 255, 255, 0.993);
@@ -84,6 +79,8 @@
   margin-top:1rem
 }
 
+
+/*Footer*/
 .linkFooter{
   color:white;
   text-decoration: none;
@@ -94,6 +91,14 @@
 }
 
 
+/*Card photo*/
+.card-img-top{
+  height:350px;
+  object-fit: cover;
+}
+
+
+/*Photo list*/
 .photoModalView{
   width:100%;
   height: 100%;
@@ -101,6 +106,11 @@
 
 .modal-content{
   background-color: transparent;
+}
+
+.photoInGallery{
+  width:100%;
+  object-fit: cover;
 }
 
 

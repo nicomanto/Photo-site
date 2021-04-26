@@ -9,6 +9,22 @@ type Props = {
   dataProject: Project[];
 };
 
+const getPrimaryImage = async (folder: string): Promise<Photo> => {
+  const data = await fetch(`${process.env.URL_SITE}/api/getPrimaryPhoto/${folder}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (data.status === 200) {
+    return (await data.json()).photo;
+  }
+
+  throw Error("Primary Image not found");
+};
+
 const portfolioPage = ({ dataProject }: Props) => (
   <Layout title="Portfolio">
     <h1 className="display-3 text-center">Recent works</h1>
@@ -27,22 +43,6 @@ const portfolioPage = ({ dataProject }: Props) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const getPrimaryImage = async (folder: string): Promise<Photo> => {
-    const data = await fetch(`${process.env.URL_SITE}/api/getPrimaryPhoto/${folder}`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (data.status === 200) {
-      return (await data.json()).photo;
-    }
-
-    throw Error("Primary Image not found");
-  };
-
   const dataProject: Project[] = [
     {
       folder: "photo",

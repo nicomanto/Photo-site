@@ -6,6 +6,7 @@ const FormEmail = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // manage information form
   const sendInformation = async (event: any) => {
     setLoading(true);
     event.preventDefault();
