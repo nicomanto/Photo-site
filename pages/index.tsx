@@ -15,7 +15,7 @@ const IndexPage = ({ title, subtitle, citation }: Props) => (
     <h2 className="display-4 text-center subtitle-home">{subtitle}</h2>
 
     <div className="py-5 px-5 text-center">
-      <blockquote className="my-5 mx-5 py-5 px-5">
+      <blockquote className="my-5 mx-5">
         <p lang="it" className="citation">{`"${citation}"`}</p>
       </blockquote>
     </div>
