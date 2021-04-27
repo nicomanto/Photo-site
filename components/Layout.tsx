@@ -37,12 +37,12 @@ const Layout = ({
             </a>
           </Nav>
         ))}
-        <Navbar.Brand href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
+        <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
           <i>
             <SiInstagram />
           </i>
         </Navbar.Brand>
-        <Navbar.Brand href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener me">
+        <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener me">
           <i>
             <SiFacebook />
           </i>
