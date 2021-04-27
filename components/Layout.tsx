@@ -67,6 +67,7 @@ const Layout = ({
       <p>
         {" "}
         &copy; 2021 Powered by
+        {" "}
         <a
           lang="it"
           className="linkFooter"
@@ -75,7 +76,7 @@ const Layout = ({
           title="Niccolò Mantovani site"
           href="https://nicomanto.github.io/About-me"
         >
-          {" Niccolò Mantovani"}
+          {"Niccolò Mantovani"}
         </a>
       </p>
     </footer>

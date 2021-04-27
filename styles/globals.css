@@ -8,6 +8,24 @@
 }
 
 
+/*Home text*/
+.citation{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  padding: 10px;
+}
+
+.title-home{
+  letter-spacing: 5px;
+}
+
+.subtitle-home{
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+}
+
+
 
 /*Navbar*/
 .navbar-brand{
@@ -92,10 +110,6 @@
 
 
 /*Card photo*/
-.card-img-top{
-  height:350px;
-  object-fit: cover;
-}
 
 
 /*Photo list*/

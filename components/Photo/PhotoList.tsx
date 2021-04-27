@@ -32,7 +32,8 @@ const PhotoList = ({ items }: Props) => {
               alt={item.name}
               publicId={item.publicId}
               width="500"
-              crop="scale"
+              height="700"
+              crop="fill"
               loading="lazy"
             />
           </div>
