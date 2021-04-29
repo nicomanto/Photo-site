@@ -91,7 +91,7 @@ const FormEmail = () => {
             rows={3}
           />
 
-          <Button type="submit" className="my-5 px-5" variant="info">
+          <Button type="submit" className="my-5 px-5" variant="light">
             Send
           </Button>
         </FormGroup>
@@ -110,7 +110,7 @@ const FormEmail = () => {
     <div className="my-5">
       <p>Email successfully sent, wait for a response.</p>
 
-      <a href="/" className="btn btn-info" role="button">
+      <a href="/" className="btn btn-light" role="button">
         Back to the home page
       </a>
     </div>

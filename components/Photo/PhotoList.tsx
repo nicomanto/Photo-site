@@ -21,7 +21,7 @@ const PhotoList = ({ items }: Props) => {
       <ModalPhoto show={modalShow} onHide={() => setModalShow(false)} imageContent={imageContent} />
       <div className="row text-center">
         {items.map((item) => (
-          <div className="col-md-4 px-5">
+          <div className="col-md-4">
             <Image
               onClick={() => {
                 setModalShow(true);
@@ -32,7 +32,7 @@ const PhotoList = ({ items }: Props) => {
               alt={item.name}
               publicId={item.publicId}
               width="500"
-              height="550"
+              height="500"
               crop="fill"
               loading="lazy"
             />

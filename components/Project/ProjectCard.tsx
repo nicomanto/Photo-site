@@ -13,7 +13,7 @@ const projectCard = ({ folder, image }: Props) => (
       <Card.Img variant="top" src={image.imageURL} alt={image.name} />
       <Card.Body>
         <Card.Title className="my-3">{folder}</Card.Title>
-        <a href={`/photoListFolder/${folder}`} className="btn btn-info" role="button">
+        <a href={`/gallery/${folder}`} className="btn btn-light" role="button">
           See more
         </a>
       </Card.Body>

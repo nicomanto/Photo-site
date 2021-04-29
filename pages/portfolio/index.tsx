@@ -25,7 +25,7 @@ const getPrimaryImage = async (folder: string): Promise<Photo> => {
   throw Error("Primary Image not found");
 };
 
-const portfolioPage = ({ dataProject }: Props) => (
+const PortfolioPage = ({ dataProject }: Props) => (
   <Layout title="Portfolio">
     <h1 className="display-3 text-center">Recent works</h1>
     <div className="py-5 px-5">
@@ -66,4 +66,4 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-export default portfolioPage;
+export default PortfolioPage;
