@@ -19,7 +19,7 @@ const IndexPage = ({ title, subtitle, citation }: Props) => (
         className="my-5 mx-5"
         cite="https://www.lefrasi.com/frase/victor-hugo-quasi-tutto-segreto-delle-anime-grandi?bg=p42"
       >
-        <p lang="it" className="citation">{`"${citation}"`}</p>
+        <p lang="it" className="container citation">{`"${citation}"`}</p>
       </blockquote>
     </div>
   </Layout>

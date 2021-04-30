@@ -11,34 +11,36 @@ type Props = {
 
 const AboutMePage = ({ biography, measures }: Props) => (
   <Layout title="About me">
-    <h1 className="display-3 text-center title-home">Biography</h1>
-    <p>{biography}</p>
-    <ul>
-      <li>
-        Height:
-        <Badge variant="light">{`${measures.height} cm`}</Badge>
-      </li>
-      <li>
-        Breast:
-        <Badge variant="light">{`${measures.breast} cm`}</Badge>
-      </li>
-      <li>
-        Waist:
-        <Badge variant="light">{`${measures.waist} cm`}</Badge>
-      </li>
-      <li>
-        Hip:
-        <Badge variant="light">{`${measures.hip} cm`}</Badge>
-      </li>
-      <li>
-        Size:
-        <Badge variant="light">{measures.size}</Badge>
-      </li>
-      <li>
-        Foot:
-        <Badge variant="light">{measures.foot}</Badge>
-      </li>
-    </ul>
+    <h1 className="display-3 text-center mx-2 title-home">Biography</h1>
+    <div className="text-center py-5 px-5">
+      <p className="container">{biography}</p>
+      <ul className="measureList">
+        <li>
+          {"Height: "}
+          <Badge variant="light">{`${measures.height} cm`}</Badge>
+        </li>
+        <li>
+          {"Breast: "}
+          <Badge variant="light">{`${measures.breast} cm`}</Badge>
+        </li>
+        <li>
+          {"Waist: "}
+          <Badge variant="light">{`${measures.waist} cm`}</Badge>
+        </li>
+        <li>
+          {"Hip: "}
+          <Badge variant="light">{`${measures.hip} cm`}</Badge>
+        </li>
+        <li>
+          {"Size: "}
+          <Badge variant="light">{measures.size}</Badge>
+        </li>
+        <li>
+          {"Foot: "}
+          <Badge variant="light">{measures.foot}</Badge>
+        </li>
+      </ul>
+    </div>
   </Layout>
 );
 
