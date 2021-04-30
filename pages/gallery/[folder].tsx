@@ -3,6 +3,7 @@ import Error from "next/error";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
 import Photo from "../../interfaces/Photo";
+import { getPhotoInFolder } from "../api/managePhoto/managePhoto";
 
 type Props = {
   photoList: Photo[];
@@ -29,20 +30,14 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const folder: string = params!.folder.toString();
 
-  const data = await fetch(`${process.env.URL_SITE}/api/getPhotoList/${folder}`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-  });
+  const photos: Photo[] = await getPhotoInFolder(folder);
 
   return {
     props: {
-      statusCode: data.status,
-      errorMessage: data.status === 200 ? null : (await data.json()).error,
-      folderName: data.status === 200 ? folder : null,
-      photoList: data.status === 200 ? (await data.json()).photoList : null,
+      statusCode: photos.length ? 200 : 404,
+      errorMessage: photos.length ? null : "Folder not exist or is empty",
+      folderName: photos.length ? folder : null,
+      photoList: photos.length ? photos : null,
     },
   };
 };

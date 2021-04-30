@@ -2,27 +2,12 @@ import { GetStaticProps } from "next";
 import React from "react";
 import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
-import Photo from "../../interfaces/Photo";
+import Folder from "../../interfaces/Folder";
 import Project from "../../interfaces/Project";
+import { getFolder, getPrimaryPhoto } from "../api/managePhoto/managePhoto";
 
 type Props = {
   dataProject: Project[];
-};
-
-const getPrimaryImage = async (folder: string): Promise<Photo> => {
-  const data = await fetch(`${process.env.URL_SITE}/api/getPrimaryPhoto/${folder}`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (data.status === 200) {
-    return (await data.json()).photo;
-  }
-
-  throw Error("Primary Image not found");
 };
 
 const PortfolioPage = ({ dataProject }: Props) => (
@@ -39,26 +24,20 @@ const PortfolioPage = ({ dataProject }: Props) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(`${process.env.URL_SITE}/api/getListFolder/`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "Content-Type": "application/json",
-    },
-  });
-
-  const { folders } = await data.json();
+  const folders: Folder[] = await getFolder();
 
   const dataProject = Array<Project>();
 
-  for await (const element of folders) {
+  /* eslint-disable no-await-in-loop */
+  for (let i = 0; i < folders.length; i++) {
     const proj: Project = {
-      folder: element.path,
-      primaryImage: await getPrimaryImage(element.path),
+      folder: folders[i].path,
+      primaryImage: await getPrimaryPhoto(folders[i].path),
     };
 
     dataProject.push(proj);
   }
+  /* eslint-enable no-await-in-loop */
 
   return {
     props: {

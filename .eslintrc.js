@@ -16,6 +16,7 @@ module.exports = {
    "react/react-in-jsx-scope": "off",
    "react/no-unescaped-entities": "off",
    "no-restricted-syntax": "off",
+   "no-plusplus": "off",
    'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
   }
 }
