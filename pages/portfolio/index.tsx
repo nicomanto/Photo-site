@@ -12,7 +12,7 @@ type Props = {
 
 const PortfolioPage = ({ dataProject }: Props) => (
   <Layout title="Portfolio">
-    <h1 className="display-3 text-center">Recent works</h1>
+    <h1 className="display-3 mx-2 text-center">Recent works</h1>
     <div className="py-5 px-5">
       <div className="row hiddem-md-up">
         {dataProject.map((item) => (

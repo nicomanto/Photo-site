@@ -6,7 +6,7 @@ const ContactPage = () => {
   return (
     <Layout title="Contact">
       <div className="container text-center">
-        <h1 className="display-3">Contact</h1>
+        <h1 className="display-3 mx-2">Contact</h1>
         <FormEmail />
       </div>
     </Layout>

@@ -9,10 +9,10 @@ type Props = {
 
 const IndexPage = ({ title, subtitle, citation }: Props) => (
   <Layout title="Home">
-    <h1 lang="it" className="display-3 text-center title-home">
+    <h1 lang="it" className="display-3 mx-2 text-center title-home">
       {title}
     </h1>
-    <h2 className="display-4 text-center subtitle-home">{subtitle}</h2>
+    <h2 className="display-4 mx-2 text-center subtitle-home">{subtitle}</h2>
 
     <div className="py-5 px-5 text-center">
       <blockquote
