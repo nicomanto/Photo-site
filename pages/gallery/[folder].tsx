@@ -30,7 +30,7 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const folder: string = params!.folder.toString();
 
-  const photos: Photo[] = await getPhotoInFolder(folder);
+  const photos: Photo[] = await getPhotoInFolder(`Portfolio/${folder}`);
 
   return {
     props: {

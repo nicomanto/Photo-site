@@ -2,17 +2,18 @@ import Folder from "../../../interfaces/Folder";
 import Photo from "../../../interfaces/Photo";
 import Cloudinary from "../service/Cloudinary/Cloudinary";
 
-export const getFolder = async (): Promise<Folder[]> => {
+export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
   try {
-    const folderList = await Cloudinary.getFolderList();
+    const folderList =
+      folder === "" ? await Cloudinary.getFolderList() : await Cloudinary.getSubfolderList(folder);
     const folders = new Array<Folder>();
 
     folderList.folders.forEach((element: { name: string; path: string }) => {
-      const folder: Folder = {
+      const folderElement: Folder = {
         name: element.name,
         path: element.path,
       };
-      folders.push(folder);
+      folders.push(folderElement);
     });
     return folders;
   } catch (err) {

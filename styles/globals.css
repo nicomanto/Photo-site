@@ -3,16 +3,12 @@
   color:white;
 }
 
-.col-md-4{
-  padding-bottom: 20px;
-}
-
-
 /*Home text*/
 .citation{
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.2rem;
   letter-spacing: 6px;
+  padding:10%
 }
 
 .title-home{
@@ -22,6 +18,11 @@
 .subtitle-home{
   letter-spacing: 1px;
   font-size: 2.5rem;
+}
+
+.photoPresentation{
+  width:100%;
+  object-fit: cover;
 }
 
 
@@ -133,9 +134,23 @@
 }
 
 
+
+/*About me*/
 .measureList{
   list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
 }
+
+
+
+.biography{
+  padding: 10%;
+  font-size: 1.2rem;
+}
+
+
 
 
 
@@ -151,6 +166,10 @@
 {
     .navLink{
         display: none;
+    }
+
+    .aboutImage{
+      display: none;
     }
 }
 

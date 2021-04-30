@@ -1,7 +1,8 @@
+import Folder from "./Folder";
 import Photo from "./Photo";
 
 interface Project {
-  readonly folder: string;
+  readonly folder: Folder;
   readonly primaryImage: Photo;
 }
 

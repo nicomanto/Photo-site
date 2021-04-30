@@ -21,7 +21,7 @@ const PhotoList = ({ items }: Props) => {
       <ModalPhoto show={modalShow} onHide={() => setModalShow(false)} imageContent={imageContent} />
       <div className="row text-center">
         {items.map((item) => (
-          <div className="col-md-4">
+          <div className="col-md-4 py-2">
             <Image
               onClick={() => {
                 setModalShow(true);

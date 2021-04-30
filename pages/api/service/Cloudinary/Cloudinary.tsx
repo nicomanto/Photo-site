@@ -30,6 +30,17 @@ const Cloudinary = {
         throw Error("Failed to get list of folder from cloudinary");
       });
   },
+
+  getSubfolderList: (folder: string): Promise<any> => {
+    return cloudinary.api
+      .sub_folders(folder)
+      .then((result: any) => {
+        return result;
+      })
+      .catch(() => {
+        throw Error(`Failed to get list of subfolder in ${folder} from cloudinary`);
+      });
+  },
 };
 
 export default Cloudinary;

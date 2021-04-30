@@ -24,6 +24,8 @@ const Layout = ({
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name ="copyright" content="Niccolò Mantovani" />
+      <meta name ="keywords" content="Aurora Leso, Model, Photography, Photo, Picture"/>
     </Head>
     <header>
       <nav className="navbar-dark navbar py-5 container">
@@ -66,7 +68,7 @@ const Layout = ({
       <hr />
       <p>
         {" "}
-        &copy; 2021 Powered by
+        &copy; 2021 powered by
         {" "}
         <a
           lang="it"

@@ -16,7 +16,7 @@ const PortfolioPage = ({ dataProject }: Props) => (
     <div className="py-5 px-5">
       <div className="row hiddem-md-up">
         {dataProject.map((item) => (
-          <ProjectCard folder={item.folder} image={item.primaryImage} />
+          <ProjectCard folder={item.folder.name} image={item.primaryImage} />
         ))}
       </div>
     </div>
@@ -24,14 +24,14 @@ const PortfolioPage = ({ dataProject }: Props) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const folders: Folder[] = await getFolder();
+  const folders: Folder[] = await getFolder("Portfolio");
 
   const dataProject = Array<Project>();
 
   /* eslint-disable no-await-in-loop */
   for (let i = 0; i < folders.length; i++) {
     const proj: Project = {
-      folder: folders[i].path,
+      folder: folders[i],
       primaryImage: await getPrimaryPhoto(folders[i].path),
     };
 
