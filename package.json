@@ -1,6 +1,16 @@
 {
   "name": "photo-site",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicomanto/Photo-site.git"
+  },
+  "author": "Niccolò Mantovani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicomanto/Photo-site/issues"
+  },
+  "homepage": "https://github.com/nicomanto/Photo-site#readme",
   "scripts": {
     "dev": "next",
     "build": "next build",
