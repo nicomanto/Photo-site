@@ -79,7 +79,7 @@ export const getStaticProps: GetStaticProps = async () => {
         breast: 89,
         waist: 61,
         hip: 91,
-        size: 38,
+        size: 40,
         foot: 38.5,
       },
       photos,
