@@ -2,6 +2,10 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import Nodemailer from "../service/Nodemailer/Nodemailer";
 
 const sendCollaboration = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!req.body) {
+    res.status(403).json("Access denied");
+  }
+
   try {
     await Nodemailer.sendEmail(req.body);
 
