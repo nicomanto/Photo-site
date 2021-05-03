@@ -31,7 +31,7 @@ const Layout = ({
     </Head>
     <header>
       <nav className="navbar-dark navbar py-5 container">
-        <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it" title="Home">
+        <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it">
           Aurora Leso
         </Navbar.Brand>
         {navbar.map((item) => (

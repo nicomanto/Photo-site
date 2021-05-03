@@ -19,7 +19,7 @@ export const collaborationTXTTemplate = (emailInfo: EmailInfo): string => {
     - Cognome: ${emailInfo.surname}\n
     - Email: ${emailInfo.email}\n
     - Numero: ${emailInfo.number ? emailInfo.number : "Non fornito"}\n
-    - Messaggio: ${emailInfo.message}`;
+    - Messaggio: \n${emailInfo.message}`;
 
   return text;
 };

@@ -168,6 +168,15 @@
         display: none;
     }
 
+    .navLinkBrand:after{
+      transition: none;
+      background: none;
+    }
+
+    .navLinkBrand:hover{
+      opacity:50%
+    }
+
     .aboutImage{
       display: none;
     }
