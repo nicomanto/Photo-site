@@ -76,7 +76,7 @@ const Layout = ({
           lang="it"
           className="linkFooter"
           target="_blank"
-          rel="noopener me noreferrer"
+          rel="noopener me"
           title="Niccolò Mantovani site"
           href="https://nicomanto.github.io/About-me"
         >
