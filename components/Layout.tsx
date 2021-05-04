@@ -16,7 +16,7 @@ const Layout = ({
   navbar = [
     { title: "Portfolio", URL: "/portfolio" },
     { title: "About me", URL: "/aboutMe" },
-    { title: "Contact", URL: "/contact" },
+    { title: "Contacts", URL: "/contacts" },
   ],
 }: Props) => (
   <div>

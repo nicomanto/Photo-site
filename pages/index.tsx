@@ -2,16 +2,17 @@ import { GetStaticProps } from "next";
 import { Image } from "cloudinary-react";
 import Layout from "../components/Layout";
 import Photo from "../interfaces/Photo";
+import Citation from "../interfaces/Citation";
 import { getPhotoInFolder } from "./api/managePhoto/managePhoto";
 
 type Props = {
   title: string;
   subtitle: string;
-  citation: string;
+  cit: Citation;
   photos: Photo[];
 };
 
-const IndexPage = ({ title, subtitle, citation, photos }: Props) => (
+const IndexPage = ({ title, subtitle, cit, photos }: Props) => (
   <Layout title="Home">
     <h1 lang="it" className="display-3 mx-2 text-center title-home">
       {title}
@@ -29,12 +30,12 @@ const IndexPage = ({ title, subtitle, citation, photos }: Props) => (
           crop="fill"
           loading="lazy"
         />
-        <blockquote
-          className="my-auto col-md-8"
-          cite="https://www.lefrasi.com/frase/victor-hugo-quasi-tutto-segreto-delle-anime-grandi?bg=p42"
-        >
-          <p lang="it" className="citation">{`"${citation}"`}</p>
-        </blockquote>
+        <div className="my-auto col-md-8 citation">
+          <blockquote cite="https://www.goodreads.com/quotes/tag/modeling">
+            <p>{`"${cit.citation}"`}</p>
+            <p>{cit.author}</p>
+          </blockquote>
+        </div>
       </div>
     </div>
   </Layout>
@@ -42,12 +43,18 @@ const IndexPage = ({ title, subtitle, citation, photos }: Props) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   const photos: Photo[] = await getPhotoInFolder("Presentation/Home");
+
+  const cit: Citation = {
+    citation:
+      "Modeling is the culmination of lighting, texture, body movement, and your soul's expression.",
+    author: "Adrienne Posey",
+  };
+
   return {
     props: {
       title: "Aurora Leso",
       subtitle: "A model from Italy",
-      citation:
-        "Quasi tutto il segreto delle anime grandi si racchiude in questa parola: perseverando.",
+      cit,
       photos,
     },
   };
