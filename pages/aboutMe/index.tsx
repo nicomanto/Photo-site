@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      biography: `Hi, my name is Aurora and I study physics. I started posing in 2018 just to try but I suddenly realise that I loved it. Since then, I posed for many photographers and amateurs too. 
+      biography: `Hi, my name is Aurora and I study physics. I started posing in 2018 just to try but I suddenly realised that I loved it. Since then, I posed for many photographers and amateurs too. 
       I am available for portraits, fashion, street, glamour, lingerie. 
       Preferred cities: Mantua , Verona, Padua, Milan.`,
       measures: {
