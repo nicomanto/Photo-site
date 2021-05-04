@@ -4,7 +4,7 @@ import { Image } from "cloudinary-react";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
 import Photo from "../../interfaces/Photo";
-import { getPhotoInFolder } from "../api/managePhoto/managePhoto";
+import { getPhotoInFolder } from "../../service/Cloudinary/managePhoto/managePhoto";
 
 type Props = {
   biography: string;

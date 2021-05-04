@@ -3,7 +3,7 @@ import { Image } from "cloudinary-react";
 import Layout from "../components/Layout";
 import Photo from "../interfaces/Photo";
 import Citation from "../interfaces/Citation";
-import { getPhotoInFolder } from "./api/managePhoto/managePhoto";
+import { getPhotoInFolder } from "../service/Cloudinary/managePhoto/managePhoto";
 
 type Props = {
   title: string;

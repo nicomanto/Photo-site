@@ -3,7 +3,7 @@ import Error from "next/error";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
 import Photo from "../../interfaces/Photo";
-import { getPhotoInFolder } from "../api/managePhoto/managePhoto";
+import { getPhotoInFolder } from "../../service/Cloudinary/managePhoto/managePhoto";
 
 type Props = {
   photoList: Photo[];

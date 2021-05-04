@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
 import Folder from "../../interfaces/Folder";
 import Project from "../../interfaces/Project";
-import { getFolder, getPrimaryPhoto } from "../api/managePhoto/managePhoto";
+import { getFolder, getPrimaryPhoto } from "../../service/Cloudinary/managePhoto/managePhoto";
 
 type Props = {
   dataProject: Project[];

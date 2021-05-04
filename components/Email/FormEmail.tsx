@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
-import EmailInfo from "../../interfaces/EmailInfo";
+import EmailInfo from "../../interfaces/Email/EmailInfo";
 
 const FormEmail = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   // manage information form
   const sendInformation = async (event: any) => {
@@ -31,10 +32,13 @@ const FormEmail = () => {
     if (data.status === 200) {
       setSubmitted(true);
       setLoading(false);
+    } else {
+      setFailed(true);
+      setLoading(false);
     }
   };
 
-  if (!submitted && !loading) {
+  if (!submitted && !loading && !failed) {
     return (
       <Form onSubmit={sendInformation}>
         <p className="my-5">Fill the form to contact me.</p>
@@ -98,17 +102,28 @@ const FormEmail = () => {
       </Form>
     );
   }
-  if (!submitted && loading) {
+  if (loading) {
     return (
       <div className="spinner-border text-light my-5" role="status">
         <span className="sr-only">Loading...</span>
       </div>
     );
   }
+  if (failed) {
+    return (
+      <div className="my-5">
+        <p className="text-danger">Sending the email failed, retry later.</p>
+
+        <a href="/" className="btn btn-light" role="button">
+          Back to the home page
+        </a>
+      </div>
+    );
+  }
 
   return (
     <div className="my-5">
-      <p>Email successfully sent, wait for a response.</p>
+      <p className="text-success">Email successfully sent, wait for a response.</p>
 
       <a href="/" className="btn btn-light" role="button">
         Back to the home page
