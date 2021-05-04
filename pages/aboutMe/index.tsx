@@ -17,9 +17,7 @@ const AboutMePage = ({ biography, measures, photos }: Props) => (
     <h1 className="display-3 text-center mx-2 title-home">Biography</h1>
     <div className="py-5 px-5">
       <div className="row text-center">
-        <p lang="it" className="my-auto col-md-8 biography">
-          {biography}
-        </p>
+        <p className="my-auto col-md-8 biography">{biography}</p>
         <Image
           cloudName="dszun6oiu"
           className="photoPresentation aboutImage col-md-4 py-2"
@@ -71,9 +69,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      biography: `Sono una ragazza che posa come fotomodella da circa 4 anni, ma in primis sono una studentessa universitaria presso la facoltà di fisica di Padova.
-      Amo la fotografia in tutte le sue sfumature: posare mi è sempre piaciuto, sono a mio agio davanti all'obiettivo e mi diverto a farlo.
-      Sono disponibile nel ritratto, street, fashion e glamour. Come zone sono disponibile a Padova, Verona, Mantova, Brescia.`,
+      biography: `Hi, my name is Aurora and I study physics. I started posing in 2018 just to try but I suddenly realise that I loved it. Since then, I posed for many photographers and amateurs too. 
+      I am available for portraits, fashion, street, glamour, lingerie. 
+      Preferred cities: Mantua , Verona, Padua, Milan.`,
       measures: {
         height: 168,
         breast: 89,
