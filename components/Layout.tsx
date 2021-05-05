@@ -29,61 +29,63 @@ const Layout = ({
       <meta name="description" content="Aurora Leso model site" />
       <meta name="author" content="Niccolò Mantovani" />
     </Head>
-    <header>
-      <nav className="navbar-dark navbar py-5 container">
-        <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it">
-          Aurora Leso
-        </Navbar.Brand>
-        {navbar.map((item) => (
-          <Nav className="justify-content-end">
-            <a className="navLink" href={item.URL}>
-              {item.title}
-            </a>
-          </Nav>
-        ))}
-        <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
-          <i>
-            <SiInstagram />
-          </i>
-        </Navbar.Brand>
-        <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener me">
-          <i>
-            <SiFacebook />
-          </i>
-        </Navbar.Brand>
-
-        {/* mobile menù */}
-        <Navbar.Toggle data-toggle="collapse" data-target="#navbarCollapseContent" />
-        <Navbar.Collapse id="navbarCollapseContent">
+    <html lang="en">
+      <header>
+        <nav className="navbar-dark navbar py-5 container">
+          <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it">
+            Aurora Leso
+          </Navbar.Brand>
           {navbar.map((item) => (
             <Nav className="justify-content-end">
-              <a className="navLinkCollapse" href={item.URL}>
+              <a className="navLink" href={item.URL}>
                 {item.title}
               </a>
             </Nav>
           ))}
-        </Navbar.Collapse>
-      </nav>
-    </header>
-    {children}
-    <footer className="text-center">
-      <hr />
-      <p>
-        {" "}
-        &copy; 2021 powered by
-        {" "}
-        <a
-          lang="it"
-          className="linkFooter"
-          target="_blank"
-          rel="noopener me noreferrer"
-          title="Niccolò Mantovani site"
-          href="https://nicomanto.github.io/About-me"
-        >
-          {"Niccolò Mantovani"}
-        </a>
-      </p>
-    </footer>
+          <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
+            <i>
+              <SiInstagram />
+            </i>
+          </Navbar.Brand>
+          <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener me">
+            <i>
+              <SiFacebook />
+            </i>
+          </Navbar.Brand>
+
+          {/* mobile menù */}
+          <Navbar.Toggle data-toggle="collapse" data-target="#navbarCollapseContent" />
+          <Navbar.Collapse id="navbarCollapseContent">
+            {navbar.map((item) => (
+              <Nav className="justify-content-end">
+                <a className="navLinkCollapse" href={item.URL}>
+                  {item.title}
+                </a>
+              </Nav>
+            ))}
+          </Navbar.Collapse>
+        </nav>
+      </header>
+      {children}
+      <footer className="text-center">
+        <hr />
+        <p>
+          {" "}
+          &copy; 2021 powered by
+          {" "}
+          <a
+            lang="it"
+            className="linkFooter"
+            target="_blank"
+            rel="noopener me noreferrer"
+            title="Niccolò Mantovani site"
+            href="https://nicomanto.github.io/About-me"
+          >
+            {"Niccolò Mantovani"}
+          </a>
+        </p>
+      </footer>
+    </html>
   </div>
 );
 
