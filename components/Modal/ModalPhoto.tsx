@@ -23,7 +23,7 @@ const ModalPhoto = ({ show, onHide, imageContent }: Props) => (
       <Image
         cloudName="dszun6oiu"
         className="photoModalView"
-        alt={imageContent.name}
+        alt=""
         publicId={imageContent.publicId}
         crop="scale"
         loading="lazy"

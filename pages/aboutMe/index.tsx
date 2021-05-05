@@ -21,7 +21,7 @@ const AboutMePage = ({ biography, measures, photos }: Props) => (
         <Image
           cloudName="dszun6oiu"
           className="photoPresentation aboutImage col-md-4 py-2"
-          alt={photos[0].name}
+          alt=""
           publicId={photos[0].publicId}
           width="500"
           height="500"

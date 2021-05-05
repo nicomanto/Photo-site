@@ -29,7 +29,7 @@ const PhotoList = ({ items }: Props) => {
               }}
               cloudName="dszun6oiu"
               className="photoInGallery shadow-1-strong rounded mb-4"
-              alt={item.name}
+              alt=""
               publicId={item.publicId}
               width="500"
               height="500"
