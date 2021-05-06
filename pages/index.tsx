@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { Image } from "cloudinary-react";
 import Layout from "../components/Layout";
-import Photo from "../interfaces/Photo";
+import { Photo } from "../interfaces/Photo";
 import Citation from "../interfaces/Citation";
 import { getPhotoInFolder } from "../service/Cloudinary/managePhoto/managePhoto";
 
