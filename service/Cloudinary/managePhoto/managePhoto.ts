@@ -1,5 +1,5 @@
 import Folder from "../../../interfaces/Folder";
-import Photo from "../../../interfaces/Photo";
+import { Photo, PhotoInGallery } from "../../../interfaces/Photo";
 import Cloudinary from "../Cloudinary";
 
 export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
@@ -30,17 +30,24 @@ export const getPrimaryPhoto = async (folder: string): Promise<Photo> => {
   return photo;
 };
 
-export const getPhotoInFolder = async (folder: string): Promise<Photo[]> => {
+export const getPhotoInFolder = async (folder: string): Promise<PhotoInGallery[]> => {
   const imageList = await Cloudinary.getImageList(folder);
-  const photoList = new Array<Photo>();
+  const photoList = new Array<PhotoInGallery>();
 
   imageList.resources.forEach(
-    (element: { public_id: string; filename: string; format: string; secure_url: string }) => {
-      const photo: Photo = {
+    (element: {
+      public_id: string;
+      filename: string;
+      format: string;
+      secure_url: string;
+      context: any;
+    }) => {
+      const photo: PhotoInGallery = {
         publicId: element.public_id,
         name: element.filename,
         extension: element.format,
         imageURL: element.secure_url,
+        ph: element.context ? element.context.photographer : "Anonymous",
       };
       photoList.push(photo);
     }

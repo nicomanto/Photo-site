@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Image } from "cloudinary-react";
-import Photo from "../../interfaces/Photo";
+import { PhotoInGallery } from "../../interfaces/Photo";
 import ModalPhoto from "../Modal/ModalPhoto";
 
 type Props = {
-  items: Photo[];
+  items: PhotoInGallery[];
 };
 
 const PhotoList = ({ items }: Props) => {
@@ -14,6 +14,7 @@ const PhotoList = ({ items }: Props) => {
     name: "",
     extension: "",
     imageURL: "",
+    ph: "",
   });
 
   return (
@@ -36,6 +37,10 @@ const PhotoList = ({ items }: Props) => {
               crop="fill"
               loading="lazy"
             />
+            <p>
+              {"Photographer: "}
+              <em>{item.ph}</em>
+            </p>
           </div>
         ))}
       </div>
