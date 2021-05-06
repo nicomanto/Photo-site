@@ -38,7 +38,7 @@ const PhotoList = ({ items }: Props) => {
               loading="lazy"
             />
             <p>
-              Photographer:
+              {"Photographer: "}
               <em>{item.ph}</em>
             </p>
           </div>
