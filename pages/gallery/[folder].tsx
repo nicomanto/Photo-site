@@ -18,7 +18,7 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
   }
 
   return (
-    <Layout title={`${folderName} Gallery`}>
+    <Layout title={`${folderName} gallery`}>
       <h1 className="display-3 mx-2 text-center">{`${folderName} gallery`}</h1>
       <div className="py-5 px-5">
         <PhotoList items={photoList!} />
