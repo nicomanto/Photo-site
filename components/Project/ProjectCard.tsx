@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import Photo from "../../interfaces/Photo";
+import { Photo } from "../../interfaces/Photo";
 
 type Props = {
   folder: string;

@@ -2,11 +2,11 @@ import { GetServerSideProps } from "next";
 import Error from "next/error";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
-import Photo from "../../interfaces/Photo";
+import { PhotoInGallery } from "../../interfaces/Photo";
 import { getPhotoInFolder } from "../../service/Cloudinary/managePhoto/managePhoto";
 
 type Props = {
-  photoList: Photo[];
+  photoList: PhotoInGallery[];
   folderName: string;
   statusCode: number;
   errorMessage: string;
@@ -30,7 +30,7 @@ const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props)
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const folder: string = params!.folder.toString();
 
-  const photos: Photo[] = await getPhotoInFolder(`Portfolio/${folder}`);
+  const photos: PhotoInGallery[] = await getPhotoInFolder(`Portfolio/${folder}`);
 
   return {
     props: {

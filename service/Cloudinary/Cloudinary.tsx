@@ -10,6 +10,7 @@ const Cloudinary = {
 
     return cloudinary.search
       .expression(expression)
+      .with_field("context")
       .max_results(maxResult)
       .execute()
       .then((result: any) => {
