@@ -1,6 +1,7 @@
 *{
   background-color: black;
   color:white;
+  outline: 0 !important
 }
 
 /*Home text*/
@@ -122,10 +123,6 @@
   width: 100%;
   height: 80vh;
   object-fit: contain;
-}
-
-.noOutline:focus, .noOutline{
-  outline:0
 }
 
 .modal-content{
