@@ -124,9 +124,10 @@
   object-fit: contain;
 }
 
-.modal{
+.modal:focus{
   outline: none
 }
+
 .modal-content{
   background-color: transparent;
 }
