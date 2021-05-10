@@ -19,6 +19,7 @@ const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: 
     tabIndex="-1"
     aria-labelledby="contained-modal-title-vcenter"
     centered
+    className="noOutline"
   >
     <Modal.Header closeButton>
       <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>

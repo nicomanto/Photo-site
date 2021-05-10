@@ -124,8 +124,8 @@
   object-fit: contain;
 }
 
-.modal-open .modal,.btn:focus{
-  outline:none;
+.noOutline:focus{
+  outline: none !important;
 }
 
 .modal-content{
