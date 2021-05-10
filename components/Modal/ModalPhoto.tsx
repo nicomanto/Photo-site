@@ -12,26 +12,27 @@ type Props = {
 };
 
 const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: Props) => (
-  <Modal
-    show={show}
-    onHide={onHide}
-    size="xl"
-    tabIndex="-1"
-    aria-labelledby="contained-modal-title-vcenter"
-    centered
-    className="noOutline"
-  >
-    <Modal.Header closeButton>
-      <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>
-    </Modal.Header>
-    <Modal.Body className="text-center">
-      <CarouselPhoto
-        indexImageActive={indexImageShow}
-        setIndexImageActive={setIndexImageShow}
-        items={items}
-      />
-    </Modal.Body>
-  </Modal>
+  <div className="noOutline">
+    <Modal
+      show={show}
+      onHide={onHide}
+      size="xl"
+      tabIndex="-1"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="text-center">
+        <CarouselPhoto
+          indexImageActive={indexImageShow}
+          setIndexImageActive={setIndexImageShow}
+          items={items}
+        />
+      </Modal.Body>
+    </Modal>
+  </div>
 );
 
 export default ModalPhoto;
