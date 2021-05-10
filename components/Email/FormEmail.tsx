@@ -16,7 +16,7 @@ const FormEmail = () => {
       name: event.target.nameValue.value,
       surname: event.target.surnameValue.value,
       email: event.target.emailValue.value,
-      number: event.target.phoneValue.value ? event.target.phoneValue.value : null,
+      phone: event.target.phoneValue.value ? event.target.phoneValue.value : null,
       message: event.target.messageValue.value,
     };
 

@@ -6,7 +6,7 @@ export const collaborationHMTLTemplate = (emailInfo: EmailInfo): string => {
     <li>Nome: ${emailInfo.name}</li>
     <li>Cognome: ${emailInfo.surname}</li>
     <li>Email: ${emailInfo.email}</li>
-    <li>Numero: ${emailInfo.number ? emailInfo.number : "Non fornito"}</li>
+    <li>Telefono: ${emailInfo.phone ? emailInfo.phone : "Non fornito"}</li>
     <li>Messaggio: <p>${emailInfo.message}</p></li>
   </ul>`;
 
@@ -18,7 +18,7 @@ export const collaborationTXTTemplate = (emailInfo: EmailInfo): string => {
     - Nome: ${emailInfo.name}\n
     - Cognome: ${emailInfo.surname}\n
     - Email: ${emailInfo.email}\n
-    - Numero: ${emailInfo.number ? emailInfo.number : "Non fornito"}\n
+    - Telefono: ${emailInfo.phone ? emailInfo.phone : "Non fornito"}\n
     - Messaggio: \n${emailInfo.message}`;
 
   return text;
