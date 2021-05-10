@@ -124,7 +124,7 @@
   object-fit: contain;
 }
 
-.modal:focus{
+.modal:active{
   outline: none
 }
 
