@@ -1,6 +1,7 @@
 *{
   background-color: black;
   color:white;
+  outline: 0;
 }
 
 /*Home text*/
@@ -118,7 +119,7 @@
 
 
 /*Photo list*/
-.photoModalView{
+.photoCarouselView{
   width: 100%;
   height: 80vh;
   object-fit: contain;

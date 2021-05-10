@@ -1,15 +1,17 @@
 import * as React from "react";
 import { Modal } from "react-bootstrap";
-import { Image } from "cloudinary-react";
 import { PhotoInGallery } from "../../interfaces/Photo";
+import CarouselPhoto from "../Carousel/CarouselPhoto";
 
 type Props = {
   show: boolean;
   onHide: any;
-  imageContent: PhotoInGallery;
+  indexImageShow: number;
+  setIndexImageShow: React.Dispatch<React.SetStateAction<number>>;
+  items: PhotoInGallery[];
 };
 
-const ModalPhoto = ({ show, onHide, imageContent }: Props) => (
+const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: Props) => (
   <Modal
     show={show}
     onHide={onHide}
@@ -19,16 +21,13 @@ const ModalPhoto = ({ show, onHide, imageContent }: Props) => (
     centered
   >
     <Modal.Header closeButton>
-      <Modal.Title>{`Photographer: ${imageContent.ph}`}</Modal.Title>
+      <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>
     </Modal.Header>
     <Modal.Body className="text-center">
-      <Image
-        cloudName="dszun6oiu"
-        className="photoModalView"
-        alt=""
-        publicId={imageContent.publicId}
-        crop="scale"
-        loading="lazy"
+      <CarouselPhoto
+        indexImageActive={indexImageShow}
+        setIndexImageActive={setIndexImageShow}
+        items={items}
       />
     </Modal.Body>
   </Modal>
