@@ -24,7 +24,7 @@ const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: 
     <Modal.Header closeButton>
       <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>
     </Modal.Header>
-    <Modal.Body className="text-center">
+    <Modal.Body className="text-center shadow-none">
       <CarouselPhoto
         indexImageActive={indexImageShow}
         setIndexImageActive={setIndexImageShow}
