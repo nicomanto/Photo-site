@@ -126,7 +126,7 @@
 
 .modal-content{
   background-color: transparent;
-  outline: none;
+  outline-color: transparent;
 }
 
 .photoInGallery{
