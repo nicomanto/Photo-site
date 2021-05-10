@@ -124,9 +124,11 @@
   object-fit: contain;
 }
 
+.modal{
+  outline: none
+}
 .modal-content{
   background-color: transparent;
-  outline-color: transparent;
 }
 
 .photoInGallery{
