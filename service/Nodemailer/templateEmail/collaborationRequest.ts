@@ -1,4 +1,4 @@
-import EmailInfo from "../../../interfaces/Email/EmailInfo";
+import { EmailInfo } from "../../../interfaces/Email";
 
 export const collaborationHMTLTemplate = (emailInfo: EmailInfo): string => {
   const html: string = `<h1>Ciao Aurora</h1><h2>Hai ricevuto un nuovo messaggio di collaborazione:</h2>

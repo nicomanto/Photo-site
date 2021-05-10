@@ -1,5 +1,5 @@
 import transporter from "./Config";
-import EmailOption from "../../interfaces/Email/EmailOption";
+import { EmailOption } from "../../interfaces/Email";
 
 const Nodemailer = {
   sendEmail: (mailOption: EmailOption): Promise<boolean> => {

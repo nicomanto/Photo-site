@@ -1,5 +1,4 @@
-import EmailInfo from "../../../interfaces/Email/EmailInfo";
-import EmailOption from "../../../interfaces/Email/EmailOption";
+import { EmailInfo, EmailOption } from "../../../interfaces/Email";
 import Nodemailer from "../Nodemailer";
 import {
   collaborationHMTLTemplate,

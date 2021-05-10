@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
-import EmailInfo from "../../interfaces/Email/EmailInfo";
+import { EmailInfo } from "../../interfaces/Email";
 
 const FormEmail = () => {
   const [submitted, setSubmitted] = useState(false);
