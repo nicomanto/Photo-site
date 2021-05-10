@@ -12,7 +12,6 @@ type Props = {
 };
 
 const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: Props) => (
-  <div className="noOutline">
     <Modal
       show={show}
       onHide={onHide}
@@ -32,7 +31,6 @@ const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: 
         />
       </Modal.Body>
     </Modal>
-  </div>
 );
 
 export default ModalPhoto;
