@@ -124,7 +124,7 @@
   object-fit: contain;
 }
 
-.noOutline:focus{
+.noOutline:focus, .noOutline:active{
   outline: none !important;
 }
 
