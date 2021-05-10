@@ -19,12 +19,12 @@ const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: 
     tabIndex="-1"
     aria-labelledby="contained-modal-title-vcenter"
     centered
-    className="shadow-none"
+    className="noOutline"
   >
     <Modal.Header closeButton>
       <Modal.Title>{`Photographer: ${items[indexImageShow].ph}`}</Modal.Title>
     </Modal.Header>
-    <Modal.Body className="text-center shadow-none">
+    <Modal.Body className="text-center">
       <CarouselPhoto
         indexImageActive={indexImageShow}
         setIndexImageActive={setIndexImageShow}
