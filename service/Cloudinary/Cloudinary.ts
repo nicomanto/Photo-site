@@ -1,7 +1,7 @@
 import cloudinary from "./Config";
 
 const Cloudinary = {
-  getImageList: (folderPath: string, tag: string = "", maxResult: number = 10): Promise<any> => {
+  getImageList: (folderPath: string, tag: string = ""): Promise<any> => {
     let expression: string = `folder:${folderPath}`;
 
     if (tag !== "") {
@@ -11,7 +11,6 @@ const Cloudinary = {
     return cloudinary.search
       .expression(expression)
       .with_field("context")
-      .max_results(maxResult)
       .execute()
       .then((result: any) => {
         return result;
