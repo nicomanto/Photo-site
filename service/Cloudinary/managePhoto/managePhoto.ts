@@ -19,7 +19,7 @@ export const getFolder = async (folder: string = ""): Promise<Folder[]> => {
 };
 
 export const getPrimaryPhoto = async (folder: string): Promise<Photo> => {
-  const imageList = await Cloudinary.getImageList(folder, "primary", 1);
+  const imageList = await Cloudinary.getImageList(folder, "primary");
   const photo: Photo = {
     publicId: imageList.resources[0].public_id,
     name: imageList.resources[0].filename,
