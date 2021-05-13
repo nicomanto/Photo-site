@@ -162,14 +162,14 @@
 
 
 
-@media (min-width: 991px)
+@media (min-width: 990px)
 {
     .navbar-toggler{
         display: none;
     }
 }
 
-@media (max-width: 991px)
+@media (max-width: 990px)
 {
     .navLink{
         display: none;
