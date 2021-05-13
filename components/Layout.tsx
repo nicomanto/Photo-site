@@ -70,7 +70,7 @@ const Layout = ({
       <hr />
       <p>
         {" "}
-        &copy; 2021 powered by
+        &copy; 2021
         {" "}
         <a
           lang="it"
