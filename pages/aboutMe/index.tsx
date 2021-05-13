@@ -14,24 +14,29 @@ type Props = {
 
 const AboutMePage = ({ biography, measures, photos }: Props) => (
   <Layout title="About me">
-    <h1 className="display-3 text-center mx-2 title-home">Biography</h1>
+    <h1 className="display-4 text-center mx-2 title">Biography</h1>
     <div className="py-5 px-5">
       <div className="row text-center">
-        <p className="my-auto col-md-8 biography">{biography}</p>
-        <Image
-          cloudName="dszun6oiu"
-          className="photoPresentation aboutImage col-md-4 py-2"
-          alt=""
-          publicId={photos[0].publicId}
-          width="500"
-          height="500"
-          crop="fill"
-          loading="lazy"
-        />
+        <div className="my-auto col-md-7">
+          <p className="biography">{biography}</p>
+        </div>
+
+        <div className="col-md-5">
+          <Image
+            cloudName="dszun6oiu"
+            className="photoPresentation aboutImage "
+            alt=""
+            publicId={photos[0].publicId}
+            width="500"
+            height="500"
+            crop="fill"
+            loading="lazy"
+          />
+        </div>
       </div>
 
       <div className="text-center">
-        <h2 className="display-4 my-5">Measures</h2>
+        <h2 className="display-4 my-5 title-min">Measures</h2>
 
         <ul className="measureList">
           <li>

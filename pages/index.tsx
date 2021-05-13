@@ -14,13 +14,13 @@ type Props = {
 
 const IndexPage = ({ title, subtitle, cit, photos }: Props) => (
   <Layout title="Home">
-    <h1 lang="it" className="display-4 mx-2 text-center title-home">
+    <h1 lang="it" className="display-4 mx-2 text-center title">
       {title}
     </h1>
-    <h2 className="display-4 mx-2 text-center subtitle-home">{subtitle}</h2>
+    <h2 className="display-4 mx-2 text-center subtitle">{subtitle}</h2>
     <div className="py-5 px-5">
       <div className="row text-center">
-        <div className="col-md-4">
+        <div className="col-md-5">
           <Image
             cloudName="dszun6oiu"
             className="photoPresentation"
@@ -33,7 +33,7 @@ const IndexPage = ({ title, subtitle, cit, photos }: Props) => (
           />
         </div>
 
-        <div className="my-auto col-md-8 citation">
+        <div className="my-auto col-md-7 citation">
           <blockquote cite="https://www.goodreads.com/quotes/tag/modeling">
             <p>{`"${cit.citation}"`}</p>
             <p>{cit.author}</p>
