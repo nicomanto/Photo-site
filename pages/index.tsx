@@ -23,13 +23,14 @@ const IndexPage = ({ title, subtitle, cit, photos }: Props) => (
         <div className="col-md-5">
           <Image
             cloudName="dszun6oiu"
-            className="photoPresentation"
+            className="photoPresentation rounded"
             alt=""
             publicId={photos[0].publicId}
             width="500"
             height="500"
             crop="fill"
             loading="lazy"
+            gravity="face"
           />
         </div>
 

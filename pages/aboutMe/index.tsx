@@ -24,13 +24,14 @@ const AboutMePage = ({ biography, measures, photos }: Props) => (
         <div className="col-md-5">
           <Image
             cloudName="dszun6oiu"
-            className="photoPresentation aboutImage "
+            className="photoPresentation aboutImage rounded"
             alt=""
             publicId={photos[0].publicId}
             width="500"
             height="500"
             crop="fill"
             loading="lazy"
+            gravity="face"
           />
         </div>
       </div>
