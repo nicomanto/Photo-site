@@ -88,6 +88,11 @@
   margin-top:2rem;
 }
 
+.navbar-toggler {
+    border: none;
+    margin-top: 0.5rem
+}
+
 /*Form email*/
 .form-control:focus {
   border-color: rgba(0, 255, 255, 0.993);
