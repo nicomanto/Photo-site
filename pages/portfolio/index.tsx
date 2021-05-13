@@ -43,6 +43,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       dataProject,
     },
+    revalidate: 30,
   };
 };
 export default PortfolioPage;

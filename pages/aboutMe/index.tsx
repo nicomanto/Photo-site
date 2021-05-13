@@ -88,6 +88,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       photos,
     },
+    revalidate: 30,
   };
 };
 

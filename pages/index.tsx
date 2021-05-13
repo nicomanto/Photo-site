@@ -61,6 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
       cit,
       photos,
     },
+    revalidate: 30,
   };
 };
 
