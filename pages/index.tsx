@@ -13,7 +13,7 @@ type Props = {
 };
 
 const IndexPage = ({ title, subtitle, cit, photos }: Props) => (
-  <Layout title="Home">
+  <Layout title="Home | Aurora Leso">
     <h1 lang="it" className="display-4 mx-2 text-center title">
       {title}
     </h1>

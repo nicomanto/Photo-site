@@ -13,7 +13,7 @@ type Props = {
 };
 
 const AboutMePage = ({ biography, measures, photos }: Props) => (
-  <Layout title="About me">
+  <Layout title="About me | Aurora Leso">
     <h1 className="display-4 text-center mx-2 title">Biography</h1>
     <div className="py-5 px-5">
       <div className="row text-center">

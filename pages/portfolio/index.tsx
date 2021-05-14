@@ -11,7 +11,7 @@ type Props = {
 };
 
 const PortfolioPage = ({ dataProject }: Props) => (
-  <Layout title="Portfolio">
+  <Layout title="Portfolio | Aurora Leso">
     <h1 className="display-4 mx-2 text-center title">Recent works</h1>
     <div className="py-5 px-5">
       <div className="row hiddem-md-up">
