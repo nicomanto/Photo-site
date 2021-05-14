@@ -25,7 +25,7 @@ const Layout = ({
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name ="copyright" content="Niccolò Mantovani" />
-      <meta name ="keywords" content="Aurora Leso, Model, Photography, Photo, Picture"/>
+      <meta name ="keywords" content="Aurora Leso, Model, Biography, Measures, Contacts, Photo, Photography, Picture"/>
       <meta name="description" content="Aurora Leso model site" />
       <meta name="author" content="Niccolò Mantovani" />
     </Head>
