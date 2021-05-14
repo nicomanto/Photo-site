@@ -50,7 +50,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="Your name"
+                placeholder="e.g. Mario"
                 id="nameValue"
                 name="nameValue"
               />
@@ -61,7 +61,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="Your surname"
+                placeholder="e.g. Rossi"
                 id="surnameValue"
                 name="surnameValue"
               />
@@ -73,7 +73,7 @@ const FormEmail = () => {
               <FormControl
                 type="email"
                 required
-                placeholder="Your email"
+                placeholder="e.g. mario@address.com"
                 id="emailValue"
                 name="emailValue"
               />
@@ -81,14 +81,20 @@ const FormEmail = () => {
 
             <div className="col">
               <FormLabel>Phone</FormLabel>
-              <FormControl type="tel" placeholder="Your phone" id="phoneValue" name="phoneValue" />
+              <FormControl
+                type="tel"
+                placeholder="e.g. 1234567890"
+                id="phoneValue"
+                name="phoneValue"
+                pattern="[0-9]{10}"
+              />
             </div>
           </div>
 
           <FormLabel>Message*</FormLabel>
           <textarea
             required
-            placeholder="Your message"
+            placeholder="Type your collaboration message here..."
             id="messageValue"
             name="messageValue"
             className="form-control"
