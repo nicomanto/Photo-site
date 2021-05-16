@@ -9,8 +9,8 @@ const FormEmail = () => {
 
   // manage information form
   const sendInformation = async (event: any) => {
-    setLoading(true);
     event.preventDefault();
+    setLoading(true);
 
     const infoEmail: EmailInfo = {
       name: event.target.nameValue.value,
@@ -31,11 +31,11 @@ const FormEmail = () => {
 
     if (data.status === 200) {
       setSubmitted(true);
-      setLoading(false);
     } else {
       setFailed(true);
-      setLoading(false);
     }
+
+    setLoading(false);
   };
 
   if (!submitted && !loading && !failed) {
@@ -115,21 +115,18 @@ const FormEmail = () => {
       </div>
     );
   }
-  if (failed) {
-    return (
-      <div className="my-5">
-        <p className="text-danger">Sending the email failed, retry later.</p>
 
-        <a href="/" className="btn btn-light" role="button">
-          Back to the home page
-        </a>
-      </div>
-    );
+  let classMessage: string = "text-success";
+  let message: string = "Email successfully sent, wait for a response.";
+
+  if (failed) {
+    classMessage = "text-danger";
+    message = "Sending the email failed, retry later.";
   }
 
   return (
     <div className="my-5">
-      <p className="text-success">Email successfully sent, wait for a response.</p>
+      <p className={classMessage}>{message}</p>
 
       <a href="/" className="btn btn-light" role="button">
         Back to the home page
