@@ -3,7 +3,7 @@ import sendCollaborationEmail from "../../../service/Nodemailer/manageEmail/coll
 
 const sendCollaboration = async (req: NextApiRequest, res: NextApiResponse) => {
   if (!req.body) {
-    res.status(403).json("Access denied");
+    res.status(401).json("Access denied");
   } else {
     const isSent = await sendCollaborationEmail(req.body);
 
