@@ -19,6 +19,37 @@ const AboutMePage = ({ biography, measures, photos }: Props) => (
       <div className="row text-center">
         <div className="my-auto col-md-7">
           <p className="biography">{biography}</p>
+
+          <div className="my-5">
+            <h2 className="display-4 title-min">Measures</h2>
+
+            <ul className="measureList">
+              <li>
+                {"Height: "}
+                <Badge variant="light">{`${measures.height} cm`}</Badge>
+              </li>
+              <li>
+                {"Breast: "}
+                <Badge variant="light">{`${measures.breast} cm`}</Badge>
+              </li>
+              <li>
+                {"Waist: "}
+                <Badge variant="light">{`${measures.waist} cm`}</Badge>
+              </li>
+              <li>
+                {"Hip: "}
+                <Badge variant="light">{`${measures.hip} cm`}</Badge>
+              </li>
+              <li>
+                {"Size: "}
+                <Badge variant="light">{measures.size}</Badge>
+              </li>
+              <li>
+                {"Foot: "}
+                <Badge variant="light">{measures.foot}</Badge>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="col-md-5">
@@ -34,37 +65,6 @@ const AboutMePage = ({ biography, measures, photos }: Props) => (
             gravity="face"
           />
         </div>
-      </div>
-
-      <div className="text-center">
-        <h2 className="display-4 my-5 title-min">Measures</h2>
-
-        <ul className="measureList">
-          <li>
-            {"Height: "}
-            <Badge variant="light">{`${measures.height} cm`}</Badge>
-          </li>
-          <li>
-            {"Breast: "}
-            <Badge variant="light">{`${measures.breast} cm`}</Badge>
-          </li>
-          <li>
-            {"Waist: "}
-            <Badge variant="light">{`${measures.waist} cm`}</Badge>
-          </li>
-          <li>
-            {"Hip: "}
-            <Badge variant="light">{`${measures.hip} cm`}</Badge>
-          </li>
-          <li>
-            {"Size: "}
-            <Badge variant="light">{measures.size}</Badge>
-          </li>
-          <li>
-            {"Foot: "}
-            <Badge variant="light">{measures.foot}</Badge>
-          </li>
-        </ul>
       </div>
     </div>
   </Layout>

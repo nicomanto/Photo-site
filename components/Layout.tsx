@@ -67,7 +67,6 @@ const Layout = ({
     </header>
     {children}
     <footer className="text-center">
-      <hr />
       <p>
         {" "}
         &copy; 2021
