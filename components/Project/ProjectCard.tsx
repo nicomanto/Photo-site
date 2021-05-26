@@ -5,7 +5,7 @@ import { Photo } from "../../interfaces/Photo";
 type Props = {
   folder: string;
   image: Photo;
-  buttonName: string
+  buttonName: string;
 };
 
 const projectCard = ({ folder, image, buttonName }: Props) => (

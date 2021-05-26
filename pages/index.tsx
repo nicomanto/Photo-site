@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { Image } from "cloudinary-react";
-import i18n from '../i18n/config';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import i18n from "../i18n/config";
 import Layout from "../components/Layout";
 import { Photo } from "../interfaces/Photo";
 import Citation from "../interfaces/Citation";
@@ -12,19 +12,19 @@ type Props = {
 };
 
 const HomePage = ({ photos }: Props) => {
-  const { t } = useTranslation(['home'],{i18n});
-  
+  const { t } = useTranslation(["home"], { i18n });
+
   const cit: Citation = {
-    citation: t('citation.citation'),
-    author: t('citation.author'),
+    citation: t("citation.citation"),
+    author: t("citation.author"),
   };
 
   return (
-    <Layout title={t('pageName')}>
+    <Layout title={t("pageName")}>
       <h1 lang="it" className="display-4 mx-2 text-center title">
-        {t('title')}
+        {t("title")}
       </h1>
-      <h2 className="display-4 mx-2 text-center subtitle">{t('subtitle')}</h2>
+      <h2 className="display-4 mx-2 text-center subtitle">{t("subtitle")}</h2>
       <div className="py-5 px-5">
         <div className="row text-center">
           <div className="col-md-5">
@@ -50,11 +50,10 @@ const HomePage = ({ photos }: Props) => {
         </div>
       </div>
     </Layout>
-  )
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  
   const photos: Photo[] = await getPhotoInFolder("Presentation/Home");
 
   return {

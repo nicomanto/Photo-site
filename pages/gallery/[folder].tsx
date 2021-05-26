@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Error from "next/error";
 import { useTranslation } from "react-i18next";
-import i18n from '../../i18n/config'
+import i18n from "../../i18n/config";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
 import { PhotoInGallery } from "../../interfaces/Photo";
@@ -13,22 +13,21 @@ type Props = {
   statusCode: number;
 };
 
-const GalleryPage = ({ photoList, folderName, statusCode}: Props) => {
+const GalleryPage = ({ photoList, folderName, statusCode }: Props) => {
   if (statusCode === 404) {
-    const { t } = useTranslation(['error'],{i18n});
-    return <Error statusCode={statusCode} title={t('404Folder')} />;
+    const { t } = useTranslation(["error"], { i18n });
+    return <Error statusCode={statusCode} title={t("404Folder")} />;
   }
 
-  let titlePage: string
-  let title: string
+  let titlePage: string;
+  let title: string;
 
-  if(i18n.language=='en'){
-    titlePage= `${folderName} gallery | Aurora Leso`
-    title=`${folderName} gallery`
-  }
-  else{
-    titlePage= `Galleria ${folderName} | Aurora Leso`
-    title=`Galleria ${folderName}`
+  if (i18n.language === "en") {
+    titlePage = `${folderName} gallery | Aurora Leso`;
+    title = `${folderName} gallery`;
+  } else {
+    titlePage = `Galleria ${folderName} | Aurora Leso`;
+    title = `Galleria ${folderName}`;
   }
 
   return (
@@ -45,8 +44,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const folder: string = params!.folder.toString();
 
   const photos: PhotoInGallery[] = await getPhotoInFolder(`Portfolio/${folder}`);
-
-  
 
   return {
     props: {
