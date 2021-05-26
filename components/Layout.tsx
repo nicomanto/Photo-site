@@ -19,7 +19,7 @@ const Layout = ({
     { title: "Contacts", URL: "/contacts" },
   ],
 }: Props) => (
-  <div>
+  <>
     <Head>  
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -65,7 +65,9 @@ const Layout = ({
         </Navbar.Collapse>
       </nav>
     </header>
-    {children}
+    <main>
+      {children}
+    </main>
     <footer className="text-center">
       <p>
         {" "}
@@ -83,7 +85,7 @@ const Layout = ({
         </a>
       </p>
     </footer>
-  </div>
+  </>
 );
 
 export default Layout;

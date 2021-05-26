@@ -1,5 +1,7 @@
 import { GetServerSideProps } from "next";
 import Error from "next/error";
+import { useTranslation } from "react-i18next";
+import i18n from '../../i18n/config'
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
 import { PhotoInGallery } from "../../interfaces/Photo";
@@ -9,17 +11,29 @@ type Props = {
   photoList: PhotoInGallery[];
   folderName: string;
   statusCode: number;
-  errorMessage: string;
 };
 
-const GalleryPage = ({ photoList, folderName, statusCode, errorMessage }: Props) => {
-  if (statusCode !== 200) {
-    return <Error statusCode={statusCode} title={errorMessage} />;
+const GalleryPage = ({ photoList, folderName, statusCode}: Props) => {
+  if (statusCode === 404) {
+    const { t } = useTranslation(['error'],{i18n});
+    return <Error statusCode={statusCode} title={t('404Folder')} />;
+  }
+
+  let titlePage: string
+  let title: string
+
+  if(i18n.language=='en'){
+    titlePage= `${folderName} gallery | Aurora Leso`
+    title=`${folderName} gallery`
+  }
+  else{
+    titlePage= `Galleria ${folderName} | Aurora Leso`
+    title=`Galleria ${folderName}`
   }
 
   return (
-    <Layout title={`${folderName} gallery | Aurora Leso`}>
-      <h1 className="display-4 mx-2 text-center title">{`${folderName} gallery`}</h1>
+    <Layout title={titlePage}>
+      <h1 className="display-4 mx-2 text-center title">{title}</h1>
       <div className="py-5 px-5">
         <PhotoList items={photoList!} />
       </div>
@@ -32,10 +46,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   const photos: PhotoInGallery[] = await getPhotoInFolder(`Portfolio/${folder}`);
 
+  
+
   return {
     props: {
       statusCode: photos.length ? 200 : 404,
-      errorMessage: photos.length ? null : "Folder not exist or is empty",
       folderName: photos.length ? folder : null,
       photoList: photos.length ? photos : null,
     },

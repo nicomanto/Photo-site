@@ -1,5 +1,7 @@
 import { GetStaticProps } from "next";
 import React from "react";
+import i18n from '../../i18n/config'
+import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
 import Folder from "../../interfaces/Folder";
@@ -10,18 +12,22 @@ type Props = {
   dataProject: Project[];
 };
 
-const PortfolioPage = ({ dataProject }: Props) => (
-  <Layout title="Portfolio | Aurora Leso">
-    <h1 className="display-4 mx-2 text-center title">Recent works</h1>
-    <div className="py-5 px-5">
-      <div className="row hiddem-md-up">
-        {dataProject.map((item) => (
-          <ProjectCard folder={item.folder.name} image={item.primaryImage} />
-        ))}
+const PortfolioPage = ({ dataProject }: Props) => {
+  const { t } = useTranslation(['portfolio'],{i18n});
+  
+  return(
+    <Layout title={t('pageName')}>
+      <h1 className="display-4 mx-2 text-center title">{t('title')}</h1>
+      <div className="py-5 px-5">
+        <div className="row hiddem-md-up">
+          {dataProject.map((item) => (
+            <ProjectCard buttonName={t('button')} folder={item.folder.name} image={item.primaryImage} />
+          ))}
+        </div>
       </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  )
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const folders: Folder[] = await getFolder("Portfolio");
