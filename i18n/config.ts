@@ -5,11 +5,13 @@ import homeEN from "./en/home.json";
 import contactsEN from "./en/contacts.json";
 import portfolioEN from "./en/portfolio.json";
 import errorEN from "./en/error.json";
+import formEmailEN from "./en/formEmail.json";
 import aboutMeIT from "./it/aboutMe.json";
 import homeIT from "./it/home.json";
 import contactsIT from "./it/contacts.json";
 import portfolioIT from "./it/portfolio.json";
 import errorIT from "./it/error.json";
+import formEmailIT from "./it/formEmail.json";
 
 const resources = {
   en: {
@@ -18,6 +20,7 @@ const resources = {
     contacts: contactsEN,
     portfolio: portfolioEN,
     error: errorEN,
+    formEmail: formEmailEN
   },
   it: {
     aboutMe: aboutMeIT,
@@ -25,12 +28,12 @@ const resources = {
     contacts: contactsIT,
     portfolio: portfolioIT,
     error: errorIT,
+    formEmail: formEmailIT
   },
 };
 
 i18n.use(initReactI18next).init({
-  lng: "en",
-  ns: ["aboutMe", "home", "contacts", "portfolio", "error"],
+  ns: ["aboutMe", "home", "contacts", "portfolio", "error", 'formEmail'],
   resources,
 });
 

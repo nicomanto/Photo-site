@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
 import { EmailInfo } from "../../interfaces/Email";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n/config";
 
 const FormEmail = () => {
+  const { t } = useTranslation(["formEmail"], { i18n });
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -41,27 +45,27 @@ const FormEmail = () => {
   if (!submitted && !loading && !failed) {
     return (
       <Form onSubmit={sendInformation}>
-        <p className="my-5">Fill the form to contact me.</p>
-        <FormText>Fills with * are necessary.</FormText>
+        <p className="my-5">{t('formMessage')}</p>
+        <FormText>{t('formText')}</FormText>
         <FormGroup>
           <div className="form-row">
             <div className="col">
-              <FormLabel>Name*</FormLabel>
+              <FormLabel>{t('name.label')}*</FormLabel>
               <FormControl
                 type="text"
                 required
-                placeholder="e.g. Mario"
+                placeholder={t('name.placeholder')}
                 id="nameValue"
                 name="nameValue"
               />
             </div>
 
             <div className="col">
-              <FormLabel>Surname*</FormLabel>
+              <FormLabel>{t('surname.label')}*</FormLabel>
               <FormControl
                 type="text"
                 required
-                placeholder="e.g. Rossi"
+                placeholder={t('surname.placeholder')}
                 id="surnameValue"
                 name="surnameValue"
               />
@@ -69,21 +73,21 @@ const FormEmail = () => {
           </div>
           <div className="form-row">
             <div className="col">
-              <FormLabel>Email*</FormLabel>
+              <FormLabel>{t('email.label')}*</FormLabel>
               <FormControl
                 type="email"
                 required
-                placeholder="e.g. mario@address.com"
+                placeholder={t('email.placeholder')}
                 id="emailValue"
                 name="emailValue"
               />
             </div>
 
             <div className="col">
-              <FormLabel>Phone</FormLabel>
+              <FormLabel>{t('phone.label')}</FormLabel>
               <FormControl
                 type="tel"
-                placeholder="e.g. 1234567890"
+                placeholder={t('phone.placeholder')}
                 id="phoneValue"
                 name="phoneValue"
                 pattern="[0-9]{10}"
@@ -91,10 +95,10 @@ const FormEmail = () => {
             </div>
           </div>
 
-          <FormLabel>Message*</FormLabel>
+          <FormLabel>{t('message.label')}*</FormLabel>
           <textarea
             required
-            placeholder="Type your collaboration message here..."
+            placeholder={t('message.placeholder')}
             id="messageValue"
             name="messageValue"
             className="form-control"
@@ -102,7 +106,7 @@ const FormEmail = () => {
           />
 
           <Button type="submit" className="my-5 px-5" variant="light">
-            Send
+          {t('formButtonName')}
           </Button>
         </FormGroup>
       </Form>
@@ -111,17 +115,17 @@ const FormEmail = () => {
   if (loading) {
     return (
       <div className="spinner-border text-light my-5" role="status">
-        <span className="sr-only">Loading...</span>
+        <span className="sr-only">{t('sendEmail.loadingSR')}</span>
       </div>
     );
   }
 
   let classMessage: string = "text-success";
-  let message: string = "Email successfully sent, wait for a response.";
+  let message: string = t('sendEmail.successSend');
 
   if (failed) {
     classMessage = "text-danger";
-    message = "Sending the email failed, retry later.";
+    message = t('sendEmail.failedSend');
   }
 
   return (
@@ -129,7 +133,7 @@ const FormEmail = () => {
       <p className={classMessage}>{message}</p>
 
       <a href="/" className="btn btn-light" role="button">
-        Back to the home page
+        {t('sendEmail.buttonBack')}
       </a>
     </div>
   );

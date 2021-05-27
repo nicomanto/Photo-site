@@ -1,9 +1,16 @@
 {
-    "pageSite": "Home",
-    "title": "Aurora Leso",
-    "subtitle": "A model from Italy",
-    "citation": {
-        "citation": "Modeling is the culmination of lighting, texture, body movement, and your soul's expression.",
-        "author": "Adrienne Posey"
+    "pageName": "About me | Aurora Leso",
+    "title": "Biography",
+    "biography": "Hi, my name is Aurora and I study physics. I started posing in 2018 just to try but I suddenly realised that I loved it. Since then, I posed for many photographers and amateurs too. I am available for portraits, fashion, street, glamour, lingerie. Preferred cities: Mantua , Verona, Padua, Milan.",
+    "measures": {
+        "title": "Measures",
+        "data":{
+            "height": "Height",
+            "breast": "Breast",
+            "waist": "Waist",
+            "hip": "Hip",
+            "size": "Size",
+            "foot": "Foot"
+        }
     }
 }

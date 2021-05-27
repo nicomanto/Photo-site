@@ -1,0 +1,31 @@
+{
+    "formMessage": "Completa i campi per inviarmi un messaggio",
+    "formText": "I campi con * sono necessari",
+    "formButtonName": "Invio",
+    "name": {
+        "label": "Nome",
+        "placeholder": "es. Mario"
+    },
+    "surname": {
+        "label": "Cognome",
+        "placeholder": "es. Rossi"
+    },
+    "email": {
+        "label": "Email",
+        "placeholder": "es. mario@address.com"
+    },
+    "phone": {
+        "label": "Telefono",
+        "placeholder": "es. 1234567890"
+    },
+    "message": {
+        "label": "Messaggio",
+        "placeholder": "Scrivi il tuo messaggio di collaborazione qui..."
+    },
+    "sendEmail":{
+        "loadingSR": "Caricamento...",
+        "successSend": "Email inviata correttamente, attendi una risposta",
+        "failedSend": "Invio dell'email fallito, riprova più tardi",
+        "buttonBack": "Ritorna all'home page"
+    }
+}
