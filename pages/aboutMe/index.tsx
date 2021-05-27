@@ -15,15 +15,15 @@ type Props = {
 const AboutMePage = ({ photos }: Props) => {
   const { t } = useTranslation(["aboutMe"], { i18n });
 
-  const measures: Measures ={
+  const measures: Measures = {
     height: 168,
     breast: 89,
     waist: 61,
     hip: 91,
     size: 40,
     foot: 38.5,
-  }
-  
+  };
+
   return (
     <Layout title={t("pageName")}>
       <h1 className="display-4 text-center mx-2 title">{t("title")}</h1>
@@ -80,7 +80,7 @@ const AboutMePage = ({ photos }: Props) => {
         </div>
       </div>
     </Layout>
-  )
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../../components/Layout";
 import { useTranslation } from "react-i18next";
+import Layout from "../../components/Layout";
 import i18n from "../../i18n/config";
 import FormEmail from "../../components/Email/FormEmail";
 

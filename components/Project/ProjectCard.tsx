@@ -13,7 +13,9 @@ const projectCard = ({ folder, image, buttonName }: Props) => (
     <Card className="card-block text-center">
       <Card.Img variant="top" src={image.imageURL} alt="" />
       <Card.Body className="bg-light">
-        <Card.Title className="my-3 text-black bg-light">{folder}</Card.Title>
+        <Card.Title lang="en" className="my-3 text-black bg-light">
+          {folder}
+        </Card.Title>
         <a href={`/gallery/${folder}`} className="btn btn-dark" role="button">
           {buttonName}
         </a>
