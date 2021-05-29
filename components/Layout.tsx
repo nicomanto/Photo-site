@@ -43,11 +43,9 @@ const Layout = ({
             Aurora Leso
           </Navbar.Brand>
           {navbar.map((item) => (
-            <Nav className="justify-content-end">
               <a className="navLink" href={item.URL}>
                 {item.title}
               </a>
-            </Nav>
           ))}
           <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
             <i>
@@ -83,7 +81,7 @@ const Layout = ({
           {" "}
           <a
             lang="it"
-            className="linkFooter"
+            className="simpleLink"
             target="_blank"
             rel="noopener me noreferrer"
             title="Niccolò Mantovani site"
@@ -93,8 +91,8 @@ const Layout = ({
           </a>
         </p>
 
-        <Button variant="outline-info" onClick={() => {i18n.changeLanguage("it")}} size="sm">IT</Button>
-        <Button variant="outline-info" onClick={() =>{i18n.changeLanguage("en");}} size="sm">EN</Button>
+        <Button variant="outline-light" onClick={() => {i18n.changeLanguage("it")}} size="sm">IT</Button>
+        <Button variant="outline-light" onClick={() =>{i18n.changeLanguage("en");}} size="sm">EN</Button>
       </footer>
     </>
   )

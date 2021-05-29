@@ -3,24 +3,19 @@
     "formText": "Fills with * are necessary.",
     "formButtonName": "Send",
     "name": {
-        "label": "Name",
-        "placeholder": "e.g. Jon"
+        "label": "Name"
     },
     "surname": {
-        "label": "Surname",
-        "placeholder": "e.g. Snow"
+        "label": "Surname"
     },
     "email": {
-        "label": "Email",
-        "placeholder": "e.g. jon@address.com"
+        "label": "Email"
     },
     "phone": {
-        "label": "Phone",
-        "placeholder": "e.g. 1234567890"
+        "label": "Phone"
     },
     "message": {
-        "label": "Message",
-        "placeholder": "Type your collaboration message here..."
+        "label": "Message"
     },
     "sendEmail":{
         "loadingSR": "Loading...",

@@ -3,24 +3,19 @@
     "formText": "I campi con * sono necessari",
     "formButtonName": "Invio",
     "name": {
-        "label": "Nome",
-        "placeholder": "es. Mario"
+        "label": "Nome"
     },
     "surname": {
-        "label": "Cognome",
-        "placeholder": "es. Rossi"
+        "label": "Cognome"
     },
     "email": {
-        "label": "Email",
-        "placeholder": "es. mario@address.com"
+        "label": "Email"
     },
     "phone": {
-        "label": "Telefono",
-        "placeholder": "es. 1234567890"
+        "label": "Telefono"
     },
     "message": {
-        "label": "Messaggio",
-        "placeholder": "Scrivi il tuo messaggio di collaborazione qui..."
+        "label": "Messaggio"
     },
     "sendEmail":{
         "loadingSR": "Caricamento...",

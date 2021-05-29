@@ -1,5 +1,5 @@
 import { GetServerSideProps } from "next";
-import Error from "next/error";
+import DefaultErrorPage from "next/error";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n/config";
 import Layout from "../../components/Layout";
@@ -14,25 +14,15 @@ type Props = {
 };
 
 const GalleryPage = ({ photoList, folderName, statusCode }: Props) => {
+  const { t } = useTranslation(["gallery"], { i18n });
+
   if (statusCode === 404) {
-    const { t } = useTranslation(["error"], { i18n });
-    return <Error statusCode={statusCode} title={t("404Folder")} />;
-  }
-
-  let titlePage: string;
-  let title: string;
-
-  if (i18n.language === "en") {
-    titlePage = `${folderName} gallery | Aurora Leso`;
-    title = `${folderName} gallery`;
-  } else {
-    titlePage = `Galleria ${folderName} | Aurora Leso`;
-    title = `Galleria ${folderName}`;
+    return <DefaultErrorPage statusCode={statusCode} />;
   }
 
   return (
-    <Layout title={titlePage}>
-      <h1 className="display-4 mx-2 text-center title">{title}</h1>
+    <Layout title={t("pageName", { folderName })}>
+      <h1 className="display-4 mx-2 text-center title">{t("title", { folderName })}</h1>
       <div className="py-5 px-5">
         <PhotoList items={photoList!} />
       </div>

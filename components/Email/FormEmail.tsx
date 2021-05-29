@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { EmailInfo } from "../../interfaces/Email";
+import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
 import i18n from "../../i18n/config";
+import { EmailInfo } from "../../interfaces/Email";
 
 const FormEmail = () => {
   const { t } = useTranslation(["formEmail"], { i18n });
@@ -54,7 +54,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder={t("name.placeholder")}
+                placeholder="e.g. Mario"
                 id="nameValue"
                 name="nameValue"
               />
@@ -65,7 +65,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder={t("surname.placeholder")}
+                placeholder="e.g. Rossi"
                 id="surnameValue"
                 name="surnameValue"
               />
@@ -77,7 +77,7 @@ const FormEmail = () => {
               <FormControl
                 type="email"
                 required
-                placeholder={t("email.placeholder")}
+                placeholder="e.g. mario@address.com"
                 id="emailValue"
                 name="emailValue"
               />
@@ -87,7 +87,7 @@ const FormEmail = () => {
               <FormLabel>{t("phone.label")}</FormLabel>
               <FormControl
                 type="tel"
-                placeholder={t("phone.placeholder")}
+                placeholder="e.g. 1234567890"
                 id="phoneValue"
                 name="phoneValue"
                 pattern="[0-9]{10}"
@@ -98,7 +98,6 @@ const FormEmail = () => {
           <FormLabel>{`${t("message.label")}*`}</FormLabel>
           <textarea
             required
-            placeholder={t("message.placeholder")}
             id="messageValue"
             name="messageValue"
             className="form-control"
@@ -132,7 +131,7 @@ const FormEmail = () => {
     <div className="my-5">
       <p className={classMessage}>{message}</p>
 
-      <a href="/" className="btn btn-light" role="button">
+      <a href="/" className="simpleLink">
         {t("sendEmail.buttonBack")}
       </a>
     </div>

@@ -43,8 +43,8 @@ const HomePage = ({ photos }: Props) => {
 
           <div className="my-auto col-md-7 citation">
             <blockquote cite="https://www.goodreads.com/quotes/tag/modeling">
-              <p lang="en">{`"${cit.citation}"`}</p>
-              <p lang="en">{cit.author}</p>
+              <p>{`"${cit.citation}"`}</p>
+              <p>{cit.author}</p>
             </blockquote>
           </div>
         </div>
