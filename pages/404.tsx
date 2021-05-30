@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n/config";
 
 const Page404 = () => {
-  const { t } = useTranslation(["error"], { i18n });
+  const { t } = useTranslation(["error"]);
 
   return (
     <div className="px-2 text-center mvh-hcenter">

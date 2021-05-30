@@ -1,7 +1,6 @@
 import { GetServerSideProps } from "next";
 import DefaultErrorPage from "next/error";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n/config";
 import Layout from "../../components/Layout";
 import PhotoList from "../../components/Photo/PhotoList";
 import { PhotoInGallery } from "../../interfaces/Photo";
@@ -14,7 +13,7 @@ type Props = {
 };
 
 const GalleryPage = ({ photoList, folderName, statusCode }: Props) => {
-  const { t } = useTranslation(["gallery"], { i18n });
+  const { t } = useTranslation(["gallery"]);
 
   if (statusCode === 404) {
     return <DefaultErrorPage statusCode={statusCode} />;

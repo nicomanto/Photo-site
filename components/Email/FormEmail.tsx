@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
-import i18n from "../../i18n/config";
 import { EmailInfo } from "../../interfaces/Email";
 
 const FormEmail = () => {
-  const { t } = useTranslation(["formEmail"], { i18n });
+  const { t } = useTranslation(["formEmail"]);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);

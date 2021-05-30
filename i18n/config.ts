@@ -46,8 +46,8 @@ const resources = {
 };
 
 i18n
-  .use(initReactI18next)
   .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     ns: [
       "aboutMe",
@@ -67,5 +67,7 @@ i18n
       escapeValue: true,
     },
   });
+
+
 
 export default i18n;

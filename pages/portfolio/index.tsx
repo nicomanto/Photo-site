@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n/config";
 import Layout from "../../components/Layout";
 import ProjectCard from "../../components/Project/ProjectCard";
 import Folder from "../../interfaces/Folder";
@@ -13,7 +12,7 @@ type Props = {
 };
 
 const PortfolioPage = ({ dataProject }: Props) => {
-  const { t } = useTranslation(["portfolio"], { i18n });
+  const { t } = useTranslation(["portfolio"]);
 
   return (
     <Layout title={t("pageName")}>

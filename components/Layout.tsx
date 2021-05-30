@@ -18,13 +18,18 @@ const Layout = ({
   children,
   title = "This is the default title",
 }: Props) => {
-  const { t } = useTranslation(["layout"], { i18n });
+  const { t } = useTranslation(["layout"]);
 
   const navbar: NavbarItem[] = [
     { title: t('portfolio'), URL: "/portfolio" },
     { title: t('aboutMe'), URL: "/aboutMe" },
     { title: t('contacts'), URL: "/contacts" },
   ];
+
+  const changeLanguage= (lang: string)=>{
+    i18n.changeLanguage(lang); 
+    document.documentElement.lang = i18n.language;
+  }
 
   return (
     <>
@@ -91,8 +96,8 @@ const Layout = ({
           </a>
         </p>
 
-        <Button variant="outline-light" onClick={() => {i18n.changeLanguage("it")}} size="sm">IT</Button>
-        <Button variant="outline-light" onClick={() =>{i18n.changeLanguage("en");}} size="sm">EN</Button>
+        <Button variant="outline-light" onClick={() => {changeLanguage("it");}} size="sm">IT</Button>
+        <Button variant="outline-light" onClick={() => {changeLanguage("en");}} size="sm">EN</Button>
       </footer>
     </>
   )

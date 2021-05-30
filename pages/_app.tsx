@@ -1,10 +1,14 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { AppProps } from "next/app";
 import React from "react";
+import {useEffect} from "react";
+import i18n from "../i18n/config";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 
 /* eslint-disable global-require */
+
+
 
 if (typeof window !== "undefined") {
   require("jquery");
@@ -15,6 +19,10 @@ if (typeof window !== "undefined") {
 /* eslint-enable global-require */
 
 const PhotoSite = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+  });
+
   return <Component {...pageProps} />;
 };
 

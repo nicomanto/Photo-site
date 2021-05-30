@@ -2,7 +2,6 @@ import { GetStaticProps } from "next";
 import { Badge } from "react-bootstrap";
 import { Image } from "cloudinary-react";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n/config";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
 import { Photo } from "../../interfaces/Photo";
@@ -13,7 +12,7 @@ type Props = {
 };
 
 const AboutMePage = ({ photos }: Props) => {
-  const { t } = useTranslation(["aboutMe"], { i18n });
+  const { t } = useTranslation(["aboutMe"]);
 
   const measures: Measures = {
     height: 168,

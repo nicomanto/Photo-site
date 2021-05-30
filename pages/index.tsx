@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import { Image } from "cloudinary-react";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n/config";
 import Layout from "../components/Layout";
 import { Photo } from "../interfaces/Photo";
 import Citation from "../interfaces/Citation";
@@ -12,7 +11,7 @@ type Props = {
 };
 
 const HomePage = ({ photos }: Props) => {
-  const { t } = useTranslation(["home"], { i18n });
+  const { t } = useTranslation(["home"]);
 
   const cit: Citation = {
     citation: t("citation.citation"),

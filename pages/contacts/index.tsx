@@ -1,11 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout";
-import i18n from "../../i18n/config";
 import FormEmail from "../../components/Email/FormEmail";
 
 const ContactPage = () => {
-  const { t } = useTranslation(["contacts"], { i18n });
+  const { t } = useTranslation(["contacts"]);
 
   return (
     <Layout title={t("pageName")}>

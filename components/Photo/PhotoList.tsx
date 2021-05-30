@@ -3,7 +3,6 @@ import { Image } from "cloudinary-react";
 import { useTranslation } from "react-i18next";
 import { PhotoInGallery } from "../../interfaces/Photo";
 import ModalPhoto from "../Modal/ModalPhoto";
-import i18n from "../../i18n/config";
 
 type Props = {
   items: PhotoInGallery[];
@@ -13,7 +12,7 @@ const PhotoList = ({ items }: Props) => {
   const [modalShow, setModalShow] = useState(false);
   const [indexImageSelected, setIndexImageSelected] = useState(0);
 
-  const { t } = useTranslation(["ph"], { i18n });
+  const { t } = useTranslation(["ph"]);
 
   return (
     <>

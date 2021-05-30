@@ -3,7 +3,6 @@ import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { PhotoInGallery } from "../../interfaces/Photo";
 import CarouselPhoto from "../Carousel/CarouselPhoto";
-import i18n from "../../i18n/config";
 
 type Props = {
   show: boolean;
@@ -14,7 +13,7 @@ type Props = {
 };
 
 const ModalPhoto = ({ show, onHide, indexImageShow, setIndexImageShow, items }: Props) => {
-  const { t } = useTranslation(["ph"], { i18n });
+  const { t } = useTranslation(["ph"]);
 
   return (
     <Modal
