@@ -10,6 +10,7 @@ import formEmailEN from "./en/components/formEmail.json";
 import photographerEN from "./en/components/photographer.json";
 import layoutEN from "./en/components/layout.json";
 import galleryEN from "./en/pages/gallery.json";
+import cookieEN from "./en/components/cookie.json";
 import aboutMeIT from "./it/pages/aboutMe.json";
 import homeIT from "./it/pages/home.json";
 import contactsIT from "./it/pages/contacts.json";
@@ -19,6 +20,7 @@ import formEmailIT from "./it/components/formEmail.json";
 import layoutIT from "./it/components/layout.json";
 import photographerIT from "./it/components/photographer.json";
 import galleryIT from "./it/pages/gallery.json";
+import cookieIT from "./it/components/cookie.json";
 
 const resources = {
   en: {
@@ -31,6 +33,7 @@ const resources = {
     layout: layoutEN,
     ph: photographerEN,
     gallery: galleryEN,
+    cookie: cookieEN
   },
   it: {
     aboutMe: aboutMeIT,
@@ -42,6 +45,7 @@ const resources = {
     layout: layoutIT,
     ph: photographerIT,
     gallery: galleryIT,
+    cookie: cookieIT
   },
 };
 
@@ -59,6 +63,7 @@ i18n
       "layout",
       "ph",
       "gallery",
+      "cookie"
     ],
     resources,
     fallbackLng: "en",

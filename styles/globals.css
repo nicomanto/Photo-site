@@ -173,6 +173,22 @@
 }
 
 
+/*Cookie bar*/
+
+.CookieConsent{
+  text-align: center;
+}
+
+.CookieContent{
+  background-color: white;
+  color: black;
+}
+
+.CookieWrapperButton{
+  background-color: white;
+}
+
+
 
 
 
