@@ -2,32 +2,52 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { EmailInfo } from "../../../interfaces/Email";
 import sendCollaborationEmail from "../../../service/Nodemailer/manageEmail/collaborationEmail";
 
-const sendCollaboration = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (!req.body.name) {
-    res.status(400).json("Name not found");
-  } else if (!req.body.surname) {
-    res.status(400).json("Surname not found");
-  } else if (!req.body.email) {
-    res.status(400).json("Email not found");
-  } else if (!req.body.message) {
-    res.status(400).json("Message not found");
-  } else {
-    const infoEmail: EmailInfo = {
-      name: req.body.name,
-      surname: req.body.surname,
-      email: req.body.email,
-      phone: req.body.phone,
-      message: req.body.message,
-    };
-
-    const isSent = await sendCollaborationEmail(infoEmail);
-
-    if (isSent) {
-      res.status(200).json({ message: "Email sent correctly" });
-    } else {
-      res.status(502).json({ error: "Failed to send email" });
+const validateHuman = async (token: string): Promise<boolean> => {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  const response = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
+    {
+      method: "POST",
     }
+  );
+
+  const data = await response.json();
+  return data.success;
+};
+
+const validateForm = (infoForm: EmailInfo): boolean => {
+  if (!infoForm.name || !infoForm.surname || !infoForm.email || !infoForm.message) {
+    return false;
   }
+  return true;
+};
+
+const sendCollaboration = async (req: NextApiRequest, res: NextApiResponse) => {
+  const human: boolean = await validateHuman(req.body.token);
+
+  if (!human) {
+    return res.status(400).json("Bot not allowed!");
+  }
+
+  const infoEmail: EmailInfo = {
+    name: req.body.infoEmail.name,
+    surname: req.body.infoEmail.surname,
+    email: req.body.infoEmail.email,
+    phone: req.body.infoEmail.phone,
+    message: req.body.infoEmail.message,
+  };
+
+  if (!validateForm(infoEmail)) {
+    return res.status(400).json("Fill in all the required data.");
+  }
+
+  const isSent = await sendCollaborationEmail(infoEmail);
+
+  if (!isSent) {
+    return res.status(502).json({ error: "Failed to send email" });
+  }
+
+  return res.status(200).json({ message: "Email sent correctly" });
 };
 
 export default sendCollaboration;

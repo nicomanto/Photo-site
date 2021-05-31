@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Image } from "cloudinary-react";
+import { useTranslation } from "react-i18next";
 import { PhotoInGallery } from "../../interfaces/Photo";
 import ModalPhoto from "../Modal/ModalPhoto";
 
@@ -10,6 +11,8 @@ type Props = {
 const PhotoList = ({ items }: Props) => {
   const [modalShow, setModalShow] = useState(false);
   const [indexImageSelected, setIndexImageSelected] = useState(0);
+
+  const { t } = useTranslation(["ph"]);
 
   return (
     <>
@@ -38,8 +41,8 @@ const PhotoList = ({ items }: Props) => {
               loading="lazy"
             />
             <p>
-              {"Photographer: "}
-              <em>{item.ph}</em>
+              {`${t("ph")}: `}
+              <em lang="it">{item.ph}</em>
             </p>
           </div>
         ))}

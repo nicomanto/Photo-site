@@ -1,0 +1,26 @@
+{
+    "formMessage": "Fill the form to contact me.",
+    "formText": "Fills with * are necessary.",
+    "formButtonName": "Send",
+    "name": {
+        "label": "Name"
+    },
+    "surname": {
+        "label": "Surname"
+    },
+    "email": {
+        "label": "Email"
+    },
+    "phone": {
+        "label": "Phone"
+    },
+    "message": {
+        "label": "Message"
+    },
+    "sendEmail":{
+        "loadingSR": "Loading...",
+        "successSend": "Email successfully sent, wait for a response.",
+        "failedSend": "Sending the email failed, retry later.",
+        "buttonBack": "Back to the home page"
+    }
+}
