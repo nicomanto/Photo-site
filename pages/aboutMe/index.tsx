@@ -20,9 +20,7 @@ const AboutMePage = () => {
       <h1 className="display-4 text-center mx-2 title">{t("title")}</h1>
       <div className="py-5 px-5">
         <div className="row text-center">
-        
           <div className="my-auto col-md-7">
-          
             <p className="biography">{t("biography")}</p>
 
             <div className="my-5">
@@ -58,7 +56,11 @@ const AboutMePage = () => {
           </div>
 
           <div className="col-md-5">
-            <iframe className="map"src="https://www.google.com/maps/d/u/0/embed?mid=1a1j8xCwm1twRFxsZKvxKOXDR4p2yVw_p&z=7"></iframe>
+            <iframe
+              title="Location for works"
+              className="map"
+              src="https://www.google.com/maps/d/u/0/embed?mid=1a1j8xCwm1twRFxsZKvxKOXDR4p2yVw_p&z=7"
+            />
           </div>
         </div>
       </div>

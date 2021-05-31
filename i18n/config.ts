@@ -33,7 +33,7 @@ const resources = {
     layout: layoutEN,
     ph: photographerEN,
     gallery: galleryEN,
-    cookie: cookieEN
+    cookie: cookieEN,
   },
   it: {
     aboutMe: aboutMeIT,
@@ -45,7 +45,7 @@ const resources = {
     layout: layoutIT,
     ph: photographerIT,
     gallery: galleryIT,
-    cookie: cookieIT
+    cookie: cookieIT,
   },
 };
 
@@ -63,7 +63,7 @@ i18n
       "layout",
       "ph",
       "gallery",
-      "cookie"
+      "cookie",
     ],
     resources,
     fallbackLng: "en",
@@ -72,7 +72,5 @@ i18n
       escapeValue: true,
     },
   });
-
-
 
 export default i18n;

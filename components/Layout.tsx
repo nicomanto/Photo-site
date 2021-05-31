@@ -38,17 +38,17 @@ const Layout = ({
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name ="copyright" content="Niccolò Mantovani" />
-        <meta name ="keywords" content="Aurora Leso, Model, Biography, Measures, Contacts, Photo, Photography, Picture"/>
-        <meta name="description" content="Aurora Leso model site" />
+        <meta name ="keywords" content={t('keywords')}/>
+        <meta name="description" content={t('description')} />
         <meta name="author" content="Niccolò Mantovani" />
       </Head>
       <header>
         <nav className="navbar-dark navbar py-5 container">
-          <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it">
+          <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it" title="Home">
             Aurora Leso
           </Navbar.Brand>
           {navbar.map((item) => (
-              <a className="navLink" href={item.URL}>
+              <a className="navLink" href={item.URL} title={item.title}>
                 {item.title}
               </a>
           ))}
@@ -68,7 +68,7 @@ const Layout = ({
           <Navbar.Collapse id="navbarCollapseContent">
             {navbar.map((item) => (
               <Nav className="justify-content-end">
-                <a className="navLinkCollapse" href={item.URL}>
+                <a className="navLinkCollapse" href={item.URL} title={item.title}>
                   {item.title}
                 </a>
               </Nav>

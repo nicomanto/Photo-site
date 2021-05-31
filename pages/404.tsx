@@ -6,7 +6,7 @@ const Page404 = () => {
   return (
     <div className="px-2 text-center mvh-hcenter">
       <h1>{`404 - ${t("404.errorMessage")}`}</h1>
-      <a href="/" className="simpleLink">
+      <a href="/" className="simpleLink" title="Home">
         {t("404.buttonBack")}
       </a>
     </div>

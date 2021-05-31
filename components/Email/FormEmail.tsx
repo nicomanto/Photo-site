@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
-import { EmailInfo } from "../../interfaces/Email";
 import ReCAPTCHA from "react-google-recaptcha";
+import { EmailInfo } from "../../interfaces/Email";
 
 const FormEmail = () => {
   const { t } = useTranslation(["formEmail"]);
@@ -11,7 +11,7 @@ const FormEmail = () => {
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
 
-  const recaptchaRef: any = useRef<ReCAPTCHA>()
+  const recaptchaRef: any = useRef<ReCAPTCHA>();
 
   // manage information form
   const sendInformation = async (event: any) => {
@@ -19,7 +19,7 @@ const FormEmail = () => {
 
     const token = await recaptchaRef.current.executeAsync();
     recaptchaRef.current.reset();
-    
+
     setLoading(true);
     const infoEmail: EmailInfo = {
       name: event.target.nameValue.value,
@@ -34,7 +34,7 @@ const FormEmail = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({infoEmail,token}),
+      body: JSON.stringify({ infoEmail, token }),
     });
 
     if (data.status === 200) {
@@ -140,7 +140,7 @@ const FormEmail = () => {
     <div className="my-5">
       <p className={classMessage}>{message}</p>
 
-      <a href="/" className="simpleLink">
+      <a href="/" className="simpleLink" title="Home">
         {t("sendEmail.buttonBack")}
       </a>
     </div>
