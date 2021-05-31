@@ -63,7 +63,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="e.g. Mario"
+                placeholder="ex. Mario"
                 id="nameValue"
                 name="nameValue"
               />
@@ -74,7 +74,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="e.g. Rossi"
+                placeholder="ex. Rossi"
                 id="surnameValue"
                 name="surnameValue"
               />
@@ -86,7 +86,7 @@ const FormEmail = () => {
               <FormControl
                 type="email"
                 required
-                placeholder="e.g. mario@address.com"
+                placeholder="ex. mario@address.com"
                 id="emailValue"
                 name="emailValue"
               />
@@ -96,7 +96,7 @@ const FormEmail = () => {
               <FormLabel>{t("phone.label")}</FormLabel>
               <FormControl
                 type="tel"
-                placeholder="e.g. 1234567890"
+                placeholder="ex. 1234567890"
                 id="phoneValue"
                 name="phoneValue"
                 pattern="[0-9]{10}"
