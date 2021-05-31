@@ -17,7 +17,7 @@ This site represents a personal site for photography model.
 - [Nodemailer](https://nodemailer.com/about/) (for sending email)
 - [Bootstrap](https://getbootstrap.com/) (for style of website)
 - [Vercel](https://vercel.com/) (for deploy website)
-- [i18next](https://www.i18next.com/) (for to detect language and change language)
+- [i18next](https://www.i18next.com/) (in order to detect language and change language)
 
 
 ## Usage
