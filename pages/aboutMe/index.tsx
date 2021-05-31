@@ -1,17 +1,9 @@
-import { GetStaticProps } from "next";
 import { Badge } from "react-bootstrap";
-import { Image } from "cloudinary-react";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
-import { Photo } from "../../interfaces/Photo";
-import { getPhotoInFolder } from "../../service/Cloudinary/managePhoto/managePhoto";
 
-type Props = {
-  photos: Photo[];
-};
-
-const AboutMePage = ({ photos }: Props) => {
+const AboutMePage = () => {
   const { t } = useTranslation(["aboutMe"]);
 
   const measures: Measures = {
@@ -28,7 +20,9 @@ const AboutMePage = ({ photos }: Props) => {
       <h1 className="display-4 text-center mx-2 title">{t("title")}</h1>
       <div className="py-5 px-5">
         <div className="row text-center">
+        
           <div className="my-auto col-md-7">
+          
             <p className="biography">{t("biography")}</p>
 
             <div className="my-5">
@@ -64,33 +58,12 @@ const AboutMePage = ({ photos }: Props) => {
           </div>
 
           <div className="col-md-5">
-            <Image
-              cloudName="dszun6oiu"
-              className="photoPresentation aboutImage rounded"
-              alt=""
-              publicId={photos[0].publicId}
-              width="500"
-              height="500"
-              crop="fill"
-              loading="lazy"
-              gravity="face"
-            />
+            <iframe className="map"src="https://www.google.com/maps/d/u/0/embed?mid=1a1j8xCwm1twRFxsZKvxKOXDR4p2yVw_p&z=7"></iframe>
           </div>
         </div>
       </div>
     </Layout>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const photos: Photo[] = await getPhotoInFolder("Presentation/AboutMe");
-
-  return {
-    props: {
-      photos,
-    },
-    revalidate: 30,
-  };
 };
 
 export default AboutMePage;

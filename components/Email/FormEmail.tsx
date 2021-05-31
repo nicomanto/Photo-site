@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
 import { EmailInfo } from "../../interfaces/Email";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const FormEmail = () => {
   const { t } = useTranslation(["formEmail"]);
@@ -10,11 +11,16 @@ const FormEmail = () => {
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
 
+  const recaptchaRef: any = useRef<ReCAPTCHA>()
+
   // manage information form
   const sendInformation = async (event: any) => {
     event.preventDefault();
-    setLoading(true);
 
+    const token = await recaptchaRef.current.executeAsync();
+    recaptchaRef.current.reset();
+    
+    setLoading(true);
     const infoEmail: EmailInfo = {
       name: event.target.nameValue.value,
       surname: event.target.surnameValue.value,
@@ -26,10 +32,9 @@ const FormEmail = () => {
     const data = await fetch("/api/sendEmail", {
       method: "POST",
       headers: {
-        Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(infoEmail),
+      body: JSON.stringify({infoEmail,token}),
     });
 
     if (data.status === 200) {
@@ -44,6 +49,11 @@ const FormEmail = () => {
   if (!submitted && !loading && !failed) {
     return (
       <Form onSubmit={sendInformation}>
+        <ReCAPTCHA
+          size="invisible"
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_PUBLIC_KEY!}
+          ref={recaptchaRef}
+        />
         <p className="my-5">{t("formMessage")}</p>
         <FormText>{t("formText")}</FormText>
         <FormGroup>

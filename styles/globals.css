@@ -175,17 +175,23 @@
 
 /*Cookie bar*/
 
-.CookieConsent{
-  text-align: center;
-}
 
 .CookieContent{
   background-color: white;
   color: black;
+  text-align: center;
 }
 
 .CookieWrapperButton{
   background-color: white;
+}
+
+
+/*Map about me*/
+
+.map{
+  width: 80%;
+  height: 480px
 }
 
 
@@ -215,8 +221,8 @@
       opacity:50%
     }
 
-    .aboutImage{
-      display: none;
+    .map{
+      height: 280px
     }
 }
 
