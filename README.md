@@ -18,6 +18,7 @@ This site represents a personal site for photography model.
 - [Bootstrap](https://getbootstrap.com/) (for style of website)
 - [Vercel](https://vercel.com/) (for deploy website)
 - [i18next](https://www.i18next.com/) (in order to detect language and change language)
+- [reCAPTCHA](https://www.google.com/recaptcha/about/)
 
 
 ## Usage
