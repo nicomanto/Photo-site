@@ -2,15 +2,15 @@ import { Badge } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
-import Map from "../../components/Map/Map"
+import Map from "../../components/Map/Map";
 
 const AboutMePage = () => {
   const { t } = useTranslation(["aboutMe"]);
 
-  const map: google.maps.MapOptions= {
+  const map: google.maps.MapOptions = {
     zoom: 4,
-    center:{ lat: -25.363, lng: 131.044 },
-  }
+    center: { lat: -25.363, lng: 131.044 },
+  };
 
   const measures: Measures = {
     height: 168,
@@ -62,7 +62,7 @@ const AboutMePage = () => {
           </div>
 
           <div className="col-md-5">
-            <Map mapOptions={map}/>
+            <Map mapOptions={map} />
           </div>
         </div>
       </div>
