@@ -13,6 +13,10 @@
   border-color: black;
 }
 
+.bg-lightCustom{
+  background-color: #CDC9C9
+}
+
 .mvh-hcenter{
   margin-top: 50vh;
 }
@@ -52,7 +56,7 @@
 .photoPresentation{
   width:80%;
   height:80%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
@@ -137,6 +141,10 @@
 .card-img-top{
   height:350px;
   object-fit: cover;
+}
+
+.card{
+  background-color: transparent;
 }
 
 

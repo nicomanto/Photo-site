@@ -38,6 +38,7 @@ const PhotoList = ({ items }: Props) => {
               width="500"
               height="500"
               crop="fill"
+              gravity="face"
               loading="lazy"
             />
             <p>

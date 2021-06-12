@@ -37,6 +37,8 @@ const HomePage = ({ photos }: Props) => {
               crop="fill"
               loading="lazy"
               gravity="face"
+              radius="15"
+              background="black"
             />
           </div>
 
