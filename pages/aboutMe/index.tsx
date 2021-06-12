@@ -91,6 +91,7 @@ const AboutMePage = () => {
           </div>
 
           <div className="col-md-5">
+            <h2 className="display-4 title-min">{t("map.title")}</h2>
             <Map mapOptions={workshopLocation} />
           </div>
         </div>

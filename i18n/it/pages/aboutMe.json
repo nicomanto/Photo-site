@@ -12,5 +12,8 @@
             "size": "Taglia",
             "foot": "Scarpa"
         }
+    },
+    "map":{
+        "title": "Luoghi dove lavoro"
     }
 }

@@ -12,5 +12,8 @@
             "size": "Size",
             "foot": "Foot"
         }
+    },
+    "map":{
+        "title": "Works location"
     }
 }
