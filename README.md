@@ -19,6 +19,7 @@ This site represents a personal site for photography model.
 - [Vercel](https://vercel.com/) (for deploy website)
 - [i18next](https://www.i18next.com/) (in order to detect language and change language)
 - [reCAPTCHA](https://www.google.com/recaptcha/about/)
+- [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
 
 
 ## Usage
