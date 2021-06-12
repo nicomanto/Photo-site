@@ -2,15 +2,44 @@ import { Badge } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
+import GoogleMapOptions from "../../interfaces/GoogleMapOptions";
 import Map from "../../components/Map/Map";
+
+const getWorkshopLocation = (): GoogleMapOptions => {
+  const mapOptions: google.maps.MapOptions = {
+    zoom: 7,
+    center: { lat: 45.160116479846614, lng: 10.7750824992415386 } /* Mantova lat and lng */,
+  };
+
+  const markerOptions: google.maps.MarkerOptions[] = [
+    {
+      position: { lat: 45.160116479846614, lng: 10.775082499241538 },
+      title: "Mantova",
+    },
+    {
+      position: { lat: 45.46536206668347, lng: 9.175503680802969 },
+      title: "Milano",
+    },
+    {
+      position: { lat: 45.41021406053265, lng: 11.880835139668408 },
+      title: "Padova",
+    },
+    {
+      position: { lat: 45.4394807602597, lng: 11.004732910141918 },
+      title: "Verona",
+    },
+  ];
+
+  return {
+    mapOptions,
+    markerOptions,
+  };
+};
 
 const AboutMePage = () => {
   const { t } = useTranslation(["aboutMe"]);
 
-  const map: google.maps.MapOptions = {
-    zoom: 4,
-    center: { lat: -25.363, lng: 131.044 },
-  };
+  const workshopLocation: GoogleMapOptions = getWorkshopLocation();
 
   const measures: Measures = {
     height: 168,
@@ -62,7 +91,7 @@ const AboutMePage = () => {
           </div>
 
           <div className="col-md-5">
-            <Map mapOptions={map} />
+            <Map mapOptions={workshopLocation} />
           </div>
         </div>
       </div>

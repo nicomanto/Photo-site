@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import GoogleMapOptions from "../../interfaces/GoogleMapOptions";
 
 type Props = {
-  mapOptions: google.maps.MapOptions;
-  markerOptions?: google.maps.MarkerOptions[];
+  mapOptions: GoogleMapOptions;
 };
 
-const Map = ({ mapOptions, markerOptions = undefined }: Props) => {
+const Map = ({ mapOptions }: Props) => {
   const googlemap = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,19 +15,21 @@ const Map = ({ mapOptions, markerOptions = undefined }: Props) => {
       version: "weekly",
     });
 
-    let map: google.maps.Map;
-
     loader.load().then(() => {
-      map = new google.maps.Map(googlemap.current!, mapOptions);
-    });
+      const map: google.maps.Map = new google.maps.Map(googlemap.current!, mapOptions.mapOptions);
 
-    markerOptions?.forEach((element) => {
-      element.map = map;
-      new google.maps.Marker(element);
+      mapOptions.markerOptions?.forEach((element) => {
+        element.map = map; // eslint-disable-line no-param-reassign
+        new google.maps.Marker(element); // eslint-disable-line no-new
+      });
     });
   });
 
-  return <div ref={googlemap} id="map" />;
+  return (
+    <div className="workshopLocationContainer">
+      <div ref={googlemap} className="map" />
+    </div>
+  );
 };
 
 export default Map;

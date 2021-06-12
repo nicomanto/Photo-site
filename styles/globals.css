@@ -190,8 +190,19 @@
 /*Map about me*/
 
 .map{
-  width: 90%;
-  height: 480px;
+  height: 60vh;
+  width: 95%;
+  border-radius: 15px;
+}
+
+.workshopLocationContainer *{
+  background-color: initial;
+  color: initial;
+}
+
+.workshopLocationContainer{
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -222,7 +233,7 @@
     }
 
     .map{
-      height: 280px
+      height: 40vh;
     }
 }
 
