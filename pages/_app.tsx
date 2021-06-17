@@ -11,6 +11,8 @@ import "../styles/globals.css";
 /* eslint-disable global-require */
 
 if (typeof window !== "undefined") {
+  require("jquery");
+  require("popper.js");
   require("bootstrap/dist/js/bootstrap");
 }
 
