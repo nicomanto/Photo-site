@@ -1,6 +1,6 @@
 {
   "name": "photo-site",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nicomanto/Photo-site.git"
@@ -28,7 +28,7 @@
     "i18next-browser-languagedetector": "^6.1.1",
     "jquery": "^3.6.0",
     "next": "latest",
-    "nodemailer": "^2.7.2",
+    "nodemailer": "^6.6.1",
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
