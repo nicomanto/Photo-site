@@ -60,7 +60,7 @@ const Layout = ({
           <Navbar.Collapse id="navbar-nav">
             <Nav className="ml-auto">
               {navbar.map((item) => (
-                  <Nav.Link className="navLink text-center px-4" href={item.URL} title={item.title} >{item.title}</Nav.Link>
+                  <Nav.Link className="navLink text-right px-4" href={item.URL} title={item.title} >{item.title}</Nav.Link>
                 ))}
             </Nav>
           </Navbar.Collapse>       
