@@ -43,38 +43,29 @@ const Layout = ({
         <meta name="author" content="Niccolò Mantovani" />
       </Head>
       <header>
-        <nav className="navbar-dark navbar py-5 container">
-          <Navbar.Brand className="navLinkBrand display-4" href="/" lang="it" title="Home">
-            Aurora Leso
-          </Navbar.Brand>
-          {navbar.map((item) => (
-              <a className="navLink" href={item.URL} title={item.title}>
-                {item.title}
-              </a>
-          ))}
-          <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener me">
+
+        <Navbar expand="lg">
+          <Navbar.Brand className="navLinkBrand" href="/" lang="it" title="Home">Aurora Leso</Navbar.Brand>
+          <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" title="Instragram Aurora Leso" target="_blank" rel="noopener me">
             <i>
               <SiInstagram />
             </i>
           </Navbar.Brand>
-          <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener me">
-            <i>
+          <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" title="Facebook Aurora Leso" target="_blank" rel="noopener me">
+            <i >
               <SiFacebook />
             </i>
           </Navbar.Brand>
-
-          {/* mobile menù */}
-          <Navbar.Toggle data-toggle="collapse" data-target="#navbarCollapseContent" />
-          <Navbar.Collapse id="navbarCollapseContent">
-            {navbar.map((item) => (
-              <Nav className="justify-content-end">
-                <a className="navLinkCollapse" href={item.URL} title={item.title}>
-                  {item.title}
-                </a>
-              </Nav>
-            ))}
-          </Navbar.Collapse>
-        </nav>
+          <Navbar.Toggle aria-controls="navbar-nav" className="navbar-dark"/>
+          <Navbar.Collapse id="navbar-nav">
+            <Nav className="ml-auto">
+              {navbar.map((item) => (
+                  <Nav.Link className="navLink text-center px-4" href={item.URL} title={item.title} >{item.title}</Nav.Link>
+                ))}
+            </Nav>
+          </Navbar.Collapse>       
+        </Navbar>
+        
       </header>
       <main>
         {children}

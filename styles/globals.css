@@ -63,6 +63,11 @@
 
 /*Navbar*/
 
+.navbar{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .socialIcon:hover{
   opacity:50%;
 }
@@ -73,15 +78,15 @@
 }
 
 .navLink, .navLinkBrand{
-  color: white;
+  color: white !important;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.15rem;
-  
   display: inline-block;
   padding: 15px 20px;
   position: relative;
 }
+
 .navLink:after, .navLinkBrand:after{    
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
@@ -99,24 +104,6 @@
   left: 0; 
 }
 
-.navLinkCollapse{
-  color: white;
-  margin-top:1rem;
-  display: flex;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.15rem;
-}
-.navLinkCollapse:hover{
-  text-decoration: none;
-  opacity: 50%;
-  color: white;
-}
-
-.navbar-collapse{
-  margin-top:2rem;
-}
-
 .navbar-toggler {
     border: none;
     margin-top: 0.3rem
@@ -131,10 +118,6 @@
 .form-label{
   margin-top:1rem
 }
-
-
-
-
 
 
 /*Card photo*/
@@ -213,35 +196,29 @@
   justify-content: center;
 }
 
-
-
-
-
-
-@media (min-width: 768px)
-{
-    .navbar-toggler{
-        display: none;
-    }
-}
-
 @media (max-width: 768px)
 {
-    .navLink{
-        display: none;
-    }
+  .map{
+    height: 40vh;
+  }
 
-    .navLinkBrand:after{
-      transition: none;
-      background: none;
-    }
+  /*Set navbar propeties for mobile menu*/
+  .navLinkBrand:after, .navLink:after{
+    transition: none;
+    background: none;
+  }
 
-    .navLinkBrand:hover{
-      opacity:50%
-    }
+  .navLinkBrand:hover, .navLink:hover{
+    opacity:50%
+  }
 
-    .map{
-      height: 40vh;
-    }
+  .navbar{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navLink{
+    margin-right: 0;
+  }
 }
 
