@@ -21,6 +21,15 @@ This site represents a personal site for photography model.
 - [reCAPTCHA](https://www.google.com/recaptcha/about/)
 - [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/overview)
 
+## Folders structure
+- **components:** components that support the render of pages
+- **i18n:** translation part with i18n
+- **interfaces:** TypeScript interfaces
+- **pages:** pages of the site
+- **public:** contains the favicon
+- **service:** external services that site used via API
+- **styles:** CSS of the site
+
 
 ## Usage
 
