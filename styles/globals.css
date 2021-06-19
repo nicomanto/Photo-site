@@ -64,8 +64,7 @@
 /*Navbar*/
 
 .navbar{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 15px 10% 15px 10%
 }
 
 .socialIcon:hover{
@@ -101,6 +100,10 @@
 .navLinkBrand:hover:after, .navLink:hover:after { 
   width: 100%; 
   left: 0; 
+}
+
+.navbar-collapse{
+  margin-top: 10px;
 }
 
 .navbar-toggler {
@@ -209,11 +212,6 @@
 
   .navLinkBrand:hover, .navLink:hover{
     opacity:50%
-  }
-
-  .navbar{
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
