@@ -213,5 +213,10 @@
   .navLinkBrand:hover, .navLink:hover{
     opacity:50%
   }
+
+  .navbar{
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
