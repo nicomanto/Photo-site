@@ -46,11 +46,11 @@ const Layout = ({
 
         <Navbar expand="lg">
           <Navbar.Brand className="navLinkBrand" href="/" lang="it" title="Home">Aurora Leso</Navbar.Brand>
-          <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" title="Instragram Aurora Leso" target="_blank" rel="noopener">
-            <SiInstagram />
+          <Navbar.Brand className="socialIcon" href="https://www.instagram.com/auroraleso" target="_blank" rel="noopener">
+            <SiInstagram title="Instragram Aurora Leso"/>
           </Navbar.Brand>
-          <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" title="Facebook Aurora Leso" target="_blank" rel="noopener">
-              <SiFacebook />
+          <Navbar.Brand className="socialIcon" href="https://www.facebook.com/aurora.leso" target="_blank" rel="noopener">
+              <SiFacebook title="Facebook Aurora Leso"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar-nav" className="navbar-dark"/>
           <Navbar.Collapse id="navbar-nav">
