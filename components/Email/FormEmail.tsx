@@ -63,7 +63,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="ex. Mario"
+                placeholder="ex. Galileo"
                 id="nameValue"
                 name="nameValue"
               />
@@ -74,7 +74,7 @@ const FormEmail = () => {
               <FormControl
                 type="text"
                 required
-                placeholder="ex. Rossi"
+                placeholder="ex. Galilei"
                 id="surnameValue"
                 name="surnameValue"
               />
@@ -86,7 +86,7 @@ const FormEmail = () => {
               <FormControl
                 type="email"
                 required
-                placeholder="ex. mario@address.com"
+                placeholder="ex. galileo@address.com"
                 id="emailValue"
                 name="emailValue"
               />
