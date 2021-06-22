@@ -1,54 +1,20 @@
 import { Badge } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { GetStaticProps } from "next";
 import Layout from "../../components/Layout";
 import Measures from "../../interfaces/Measures";
 import GoogleMapOptions from "../../interfaces/GoogleMapOptions";
 import Map from "../../components/Map/Map";
+import measure from "../../data/aboutMe/measures.json";
+import mapsData from "../../data/aboutMe/mapsData.json";
 
-const getWorkshopLocation = (): GoogleMapOptions => {
-  const mapOptions: google.maps.MapOptions = {
-    zoom: 7,
-    center: { lat: 45.160116479846614, lng: 10.7750824992415386 } /* Mantova lat and lng */,
-  };
-
-  const markerOptions: google.maps.MarkerOptions[] = [
-    {
-      position: { lat: 45.160116479846614, lng: 10.775082499241538 },
-      title: "Mantova",
-    },
-    {
-      position: { lat: 45.46536206668347, lng: 9.175503680802969 },
-      title: "Milano",
-    },
-    {
-      position: { lat: 45.41021406053265, lng: 11.880835139668408 },
-      title: "Padova",
-    },
-    {
-      position: { lat: 45.4394807602597, lng: 11.004732910141918 },
-      title: "Verona",
-    },
-  ];
-
-  return {
-    mapOptions,
-    markerOptions,
-  };
+type Props = {
+  workshopLocation: GoogleMapOptions;
+  measures: Measures;
 };
 
-const AboutMePage = () => {
+const AboutMePage = ({ workshopLocation, measures }: Props) => {
   const { t } = useTranslation(["aboutMe"]);
-
-  const workshopLocation: GoogleMapOptions = getWorkshopLocation();
-
-  const measures: Measures = {
-    height: 168,
-    breast: 89,
-    waist: 61,
-    hip: 91,
-    size: 40,
-    foot: 38.5,
-  };
 
   return (
     <Layout title={t("pageName")}>
@@ -98,6 +64,43 @@ const AboutMePage = () => {
       </div>
     </Layout>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const measures: Measures = {
+    height: measure.height,
+    breast: measure.breast,
+    waist: measure.waist,
+    hip: measure.hip,
+    size: measure.size,
+    foot: measure.foot,
+  };
+
+  const mapOptions: google.maps.MapOptions = {
+    zoom: mapsData.options.zoom,
+    center: {
+      lat: mapsData.options.center.lat,
+      lng: mapsData.options.center.lng,
+    } /* Mantova lat and lng */,
+  };
+
+  const markerOptions: google.maps.MarkerOptions[] = [];
+
+  mapsData.marker.forEach((element) => {
+    markerOptions.push(element);
+  });
+
+  const workshopLocation: GoogleMapOptions = {
+    mapOptions,
+    markerOptions,
+  };
+
+  return {
+    props: {
+      workshopLocation,
+      measures,
+    },
+  };
 };
 
 export default AboutMePage;
