@@ -23,6 +23,7 @@ This site represents a personal site for photography model.
 
 ## Folders structure
 - **components:** components that support the render of pages
+- **data:** static data for pages in json format
 - **i18n:** translation part with i18n
 - **interfaces:** TypeScript interfaces
 - **pages:** pages of the site
