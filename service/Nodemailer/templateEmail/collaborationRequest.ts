@@ -1,7 +1,7 @@
 import { EmailInfo } from "../../../interfaces/Email";
 
 export const collaborationHMTLTemplate = (emailInfo: EmailInfo): string => {
-  const html: string = `<h1>Ciao Aurora</h1><h2>Hai ricevuto un nuovo messaggio di collaborazione:</h2>
+  const html: string = `<p>Ciao Aurora, hai ricevuto un nuovo messaggio di collaborazione:</p>
   <ul>
     <li>Nome: ${emailInfo.name}</li>
     <li>Cognome: ${emailInfo.surname}</li>
@@ -14,7 +14,7 @@ export const collaborationHMTLTemplate = (emailInfo: EmailInfo): string => {
 };
 
 export const collaborationTXTTemplate = (emailInfo: EmailInfo): string => {
-  const text: string = `Ciao Aurora, hai ricevuto un nuovo messaggio di collaborazione\n\n
+  const text: string = `Ciao Aurora, hai ricevuto un nuovo messaggio di collaborazione:\n\n
     - Nome: ${emailInfo.name}\n
     - Cognome: ${emailInfo.surname}\n
     - Email: ${emailInfo.email}\n
