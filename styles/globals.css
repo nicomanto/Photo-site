@@ -132,6 +132,11 @@
   background-color: transparent;
 }
 
+.iconForm{
+  width:20px;
+  height: 20px;
+}
+
 
 /*Photo list*/
 .photoCarouselView{
@@ -179,6 +184,12 @@
   background-color: white;
 }
 
+/*404 page*/
+
+.errorMessage{
+  margin: 25vh 30px 25vh 30px;
+  text-align: center;
+}
 
 /*Map about me*/
 

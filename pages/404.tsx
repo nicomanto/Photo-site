@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
+import { RiEmotionSadLine } from "react-icons/ri";
 
 const Page404 = () => {
   const { t } = useTranslation(["error"]);
 
   return (
-    <div className="px-2 text-center mvh-hcenter">
-      <h1>{`404 - ${t("404.errorMessage")}`}</h1>
+    <div className="errorMessage">
+      <h1>
+        {`404 | ${t("404.errorMessage")} `}
+        <RiEmotionSadLine title="Sad emoticon" />
+      </h1>
       <a href="/" className="simpleLink" title="Home">
         {t("404.buttonBack")}
       </a>
