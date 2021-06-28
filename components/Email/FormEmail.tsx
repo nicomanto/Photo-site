@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FormGroup, FormLabel, Form, FormControl, Button, FormText } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
-import { AiOutlineSmile } from "react-icons/Ai";
+import { AiOutlineSmile } from "react-icons/ai";
 import { EmailInfo } from "../../interfaces/Email";
 
 const FormEmail = () => {
