@@ -18,9 +18,10 @@
         "label": "Message"
     },
     "sendEmail":{
-        "loadingSR": "Loading...",
+        "sendingSR": "Sending...",
         "successSend": "Email successfully sent, wait for a response.",
-        "failedSend": "Sending the email failed, retry later.",
+        "generalFailedSend": "Sending the email failed, retry later.",
+        "fillFailedSend": "It is necessary to fill in all the required fields",
         "buttonBack": "Back to the home page"
     }
 }

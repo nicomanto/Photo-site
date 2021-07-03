@@ -121,6 +121,10 @@
   margin-top:1rem
 }
 
+.infoMessage{
+  margin: 25vh 0 25vh 0;
+}
+
 
 /*Card photo*/
 .card-img-top{

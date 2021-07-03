@@ -26,7 +26,7 @@ const sendCollaboration = async (req: NextApiRequest, res: NextApiResponse) => {
   const human: boolean = await validateHuman(req.body.token);
 
   if (!human) {
-    return res.status(400).json("Bot not allowed!");
+    return res.status(429).json("Bot not allowed!");
   }
 
   const infoEmail: EmailInfo = {
