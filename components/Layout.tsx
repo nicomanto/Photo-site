@@ -77,7 +77,7 @@ const Layout = ({
             target="_blank"
             rel="noopener"
             title="Niccolò Mantovani site"
-            href="https://nicomanto.github.io/About-me"
+            href="https://www.niccolomantovani.com"
           >
             {"Niccolò Mantovani"}
           </a>
