@@ -1,82 +1,83 @@
-*{
+* {
   background-color: black;
-  color:white;
+  color: white;
   outline: 0;
 }
 
-.text-black{
-  color: black
+.text-black {
+  color: black;
 }
 
-.btn-dark{
+.btn-dark {
   background-color: black;
   border-color: black;
 }
 
-.bg-lightCustom{
-  background-color: #CDC9C9
+.bg-lightCustom {
+  background-color: #cdc9c9;
 }
 
-.mvh-hcenter{
+.mvh-hcenter {
   margin-top: 50vh;
 }
 
-.simpleLink{
-  color:white;
+.simpleLink {
+  color: white;
   text-decoration: none;
 }
 
-.simpleLink:hover{
-  color:white;
+.simpleLink:hover {
+  color: white;
 }
 
 /*Home text*/
-.citation{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.citation {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
   letter-spacing: 3px;
-  padding-left:10%;
-  padding-right:10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-.title{
+.title {
   letter-spacing: 5px;
   font-size: 3rem;
 }
 
-.title-min{
+.title-min {
   letter-spacing: 4px;
   font-size: 2rem;
 }
 
-.subtitle{
+.subtitle {
   letter-spacing: 1px;
   font-size: 1.5rem;
 }
 
-.photoPresentation{
-  width:90%;
-  height:90%;
+.photoPresentation {
+  width: 90%;
+  height: 90%;
   object-fit: contain;
 }
 
-
-
 /*Navbar*/
 
-.navbar{
-  margin: 15px 5% 15px 5%
+.navbar {
+  margin: 15px 5% 15px 5%;
 }
 
-.socialIcon:hover{
-  opacity:50%;
+.socialIcon:hover {
+  opacity: 50%;
 }
 
-.navLink:hover, .navLinkBrand:hover{
-  color:white;
+.navLink:hover,
+.navLinkBrand:hover {
+  color: white;
   text-decoration: none;
 }
 
-.navLink, .navLinkBrand{
+.navLink,
+.navLinkBrand {
   color: white !important;
   text-transform: uppercase;
   text-decoration: none;
@@ -85,7 +86,8 @@
   position: relative;
 }
 
-.navLink:after, .navLinkBrand:after{    
+.navLink:after,
+.navLinkBrand:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
@@ -97,18 +99,19 @@
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
-.navLinkBrand:hover:after, .navLink:hover:after { 
-  width: 100%; 
-  left: 0; 
+.navLinkBrand:hover:after,
+.navLink:hover:after {
+  width: 100%;
+  left: 0;
 }
 
-.navbar-collapse{
+.navbar-collapse {
   margin-top: 10px;
 }
 
 .navbar-toggler {
-    border: none;
-    margin-top: 0.3rem
+  border: none;
+  margin-top: 0.3rem;
 }
 
 /*Form email*/
@@ -117,121 +120,117 @@
   box-shadow: inset 0 1px 1px rgba(0, 255, 255, 0.993), 0 0 12px rgba(0, 255, 255, 0.993);
 }
 
-.form-label{
-  margin-top:1rem
+.form-label {
+  margin-top: 1rem;
 }
 
-.infoMessage{
+.infoMessage {
   margin: 25vh 0 25vh 0;
 }
 
-
 /*Card photo*/
-.card-img-top{
-  height:350px;
+.card-img-top {
+  height: 350px;
   object-fit: cover;
 }
 
-.card{
+.card {
   background-color: transparent;
 }
 
-.iconForm{
-  width:20px;
+.card-body {
+  padding: 0.5rem;
+}
+
+.iconForm {
+  width: 20px;
   height: 20px;
 }
 
-
 /*Photo list*/
-.photoCarouselView{
+.photoCarouselView {
   width: 100%;
   height: 80vh;
   object-fit: contain;
 }
 
-.modal-content{
+.modal-content {
   background-color: transparent;
 }
 
-.photoInGallery{
-  width:100%;
+.photoInGallery {
+  width: 100%;
   object-fit: cover;
 }
 
-
-
 /*About me*/
-.measureList{
+.measureList {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-
-
-.biography{
+.biography {
   padding-left: 10%;
-  padding-right:10%;
+  padding-right: 10%;
 }
-
 
 /*Cookie bar*/
 
-
-.CookieContent{
+.CookieContent {
   background-color: white;
   color: black;
   text-align: center;
 }
 
-.CookieWrapperButton{
+.CookieWrapperButton {
   background-color: white;
 }
 
 /*404 page*/
 
-.errorMessage{
+.errorMessage {
   margin: 25vh 30px 25vh 30px;
   text-align: center;
 }
 
 /*Map about me*/
 
-.map{
+.map {
   height: 60vh;
   width: 95%;
   border-radius: 15px;
 }
 
-.workshopLocationContainer *{
+.workshopLocationContainer * {
   background-color: initial;
   color: initial;
 }
 
-.workshopLocationContainer{
+.workshopLocationContainer {
   display: flex;
   justify-content: center;
 }
 
-@media (max-width: 768px)
-{
-  .map{
+@media (max-width: 768px) {
+  .map {
     height: 40vh;
   }
 
   /*Set navbar propeties for mobile menu*/
-  .navLinkBrand:after, .navLink:after{
+  .navLinkBrand:after,
+  .navLink:after {
     transition: none;
     background: none;
   }
 
-  .navLinkBrand:hover, .navLink:hover{
-    opacity:50%
+  .navLinkBrand:hover,
+  .navLink:hover {
+    opacity: 50%;
   }
 
-  .navbar{
+  .navbar {
     margin-right: 0;
     margin-left: 0;
   }
 }
-
